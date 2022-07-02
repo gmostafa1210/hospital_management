@@ -14,6 +14,7 @@
         'data/sequence.xml',
 
         'views/hospital_menus.xml',
+        'views/patient_view.xml',
     ],
     'installable': True,
     'application': True,

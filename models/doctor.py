@@ -48,7 +48,10 @@ class HospitalDoctor(models.Model):
             item.name = item.full_name()
 
     @api.constrains('dob', 'phone', 'email')
-    def _check_dob(self):
+    def _check_validity(self):
+        """
+        This function will check the validity of dob, phone, email.
+        """
         for record in self:
             if record.dob and record.dob >= date.today():
                 raise UserError(_("Invalid DOB!"))
