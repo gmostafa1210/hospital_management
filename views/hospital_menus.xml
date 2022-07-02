@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem 
+        id='menu_hospital_management'
+        name='Hospital Management'
+        web_icon='hospital_management,static/description/icon.jpg'/>
+
+    <record id="action_hospital_management_doctor" model="ir.actions.act_window">
+        <field name="name">Doctor</field>
+        <field name="res_model">hospital.doctor</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem 
+        id='menu_hospital_management_doctor'
+        action='action_hospital_management_doctor'
+        name='Doctor'
+        parent='menu_hospital_management'
+        sequence='1'/>
+
+    <record id="action_hospital_management_patient" model="ir.actions.act_window">
+        <field name="name">Patient</field>
+        <field name="res_model">hospital.patient</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem 
+        id='menu_hospital_management_patient'
+        action='action_hospital_management_patient'
+        name='Patient'
+        parent='menu_hospital_management'
+        sequence='2'/>
+
+    <record id="action_hospital_management_hospital" model="ir.actions.act_window">
+        <field name="name">Hospital</field>
+        <field name="res_model">hospital.hospital</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem 
+        id='menu_hospital_management_hospital'
+        action='action_hospital_management_hospital'
+        name='Hospital'
+        parent='menu_hospital_management'
+        sequence='3'/>
+
+</odoo>
