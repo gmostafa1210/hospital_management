@@ -42,7 +42,7 @@
                     </group>
                     <notebook>
                         <page string='Patient History'>
-                            <field name="history_ids">
+                            <field name="patient_history_ids">
                                 <tree>
                                     <field name="patient_id"/>
                                     <field name="date"/>

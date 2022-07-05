@@ -26,6 +26,24 @@ class HospitalDoctor(models.Model):
     age = fields.Integer(string='Age', compute='_get_age')
     gender = fields.Selection([('male', 'Male'), 
             ('female', 'Female')], string='Gender', default='male')
+    doctor_history_ids = fields.One2many(
+        'hospital.patient.history', 'doctor_id', string='Doctor History')
+    department = fields.Selection([('allergists_immunologists', 'Allergists/Immunologists'),
+            ('anesthesiologists', 'Anesthesiologists'),
+            ('cardiologists', 'Cardiologists'),
+            ('gastroenterologists', 'Gastroenterologists'),
+            ('neurologists', 'Neurologists'),
+            ('psychiatrists', 'Psychiatrists'),
+            ('dermatologists', 'Dermatologists'),
+            ('family_physicians', 'Family Physicians'),
+            ('pediatricians', 'Pediatricians'),
+            ('urologist', 'Urologist'),
+            ('eye_specialist', ' Eye Specialist'),
+            ('ent', 'ENT'),
+            ('dental', 'Dental')], string='Department', default='allergists_immunologists', required=True)
+            
+
+
     img = fields.Binary(string='Profile Image', attachment=True)
     address = fields.Text(string='Address')
 
