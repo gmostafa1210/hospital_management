@@ -1,6 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
 
-    
+    <record id="view_hospital_hospital_tree" model="ir.ui.view">
+        <field name="name">hospital.hospital.tree</field>
+        <field name="model">hospital.hospital</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="hospital_code"/>
+                <field name="available_doctor"/>
+                <field name="patient_capacity"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- <record id="view_hospital_hospital_form" model="ir.ui.view">
+        <field name="name">hospital.hospital.form</field>
+        <field name="model">hospital.hospital</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_button_box" name="button_box"/>
+                    <div class="oe_title">
+                        <h5>Hospital Code</h5>
+                        <h1><field name="hospital_code" default_focus="1"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="available_doctor"/>
+                            <field name="patient_capacity"/>
+                        </group>
+                        <group>
+                            <field name="address"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string='Doctor List'>
+                            <field name="doctor_ids">
+                                <tree>
+                                    <field name="name"/>
+                                    <field name="doctor_code"/>
+                                </tree>
+                                <form>
+                                    <sheet>
+                                        <div class="oe_button_box" name="button_box"/>
+                                        <field name="img" widget="image" class="oe_avatar" options="{&quot;preview_image&quot;: &quot;image_128&quot;}"/>
+                                        <div class="oe_title">
+                                            <h5>Doctor Code</h5>
+                                            <h1><field name="doctor_code" default_focus="1"/></h1>
+                                        </div>
+                                        <group>
+                                            <group>
+                                                <field name="first_name"/>
+                                                <field name="last_name"/>
+                                                <field name="gender"/>
+                                                <field name="dob"/>
+                                            </group>
+                                            <group>
+                                                <field name="nid"/>
+                                                <field name="email"/>
+                                                <field name="phone"/>
+                                                <field name="address"/>
+                                            </group>
+                                        </group>
+                                    </sheet>
+                                </form>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record> -->
 
 </odoo>

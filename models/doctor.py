@@ -23,9 +23,14 @@ class HospitalDoctor(models.Model):
     email = fields.Char(string='Email', required=True)
     phone = fields.Char(string='Phone', required=True)
     dob = fields.Date(string='DOB')
+    age = fields.Integer(string='Age', compute='_get_age')
     gender = fields.Selection([('male', 'Male'), 
             ('female', 'Female')], string='Gender', default='male')
     img = fields.Binary(string='Profile Image', attachment=True)
+    address = fields.Text(string='Address')
+
+    hospital_id = fields.Many2one(
+        'hospital.hospital', string='Assigned Hospital')
 
     def full_name(self):
         """
@@ -46,6 +51,20 @@ class HospitalDoctor(models.Model):
         """
         for item in self:
             item.name = item.full_name()
+
+    def _get_age(self):
+        """
+        This function will calculate the age from the dob. 
+        """
+        for record in self:
+            if record.dob:
+                today = date.today()
+                if today.strftime("%m%d") >= record.dob.strftime("%m%d"):
+                    record['age'] = today.year - record.dob.year
+                else:
+                    record['age'] = today.year - record.dob.year - 1
+            else:
+                record['age'] = 0
 
     @api.constrains('dob', 'phone', 'email')
     def _check_validity(self):

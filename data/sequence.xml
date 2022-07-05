@@ -17,4 +17,13 @@
             <field name="padding">6</field>
         </record>
     </data>
+
+    <data noupdate="1">
+        <record id="sequence_hospital_hospital" model="ir.sequence">
+            <field name="name">Hospital Sequence</field>
+            <field name="code">hospital.hospital.sequence</field>
+            <field name="prefix">H</field>
+            <field name="padding">6</field>
+        </record>
+    </data>
 </odoo>
