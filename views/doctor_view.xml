@@ -14,7 +14,7 @@
         </field>
     </record>
 
-    <!-- <record id="view_hospital_doctor_form" model="ir.ui.view">
+    <record id="view_hospital_doctor_form" model="ir.ui.view">
         <field name="name">hospital.doctor.form</field>
         <field name="model">hospital.doctor</field>
         <field name="arch" type="xml">
@@ -34,7 +34,6 @@
                             <field name="dob"/>
                         </group>
                         <group>
-                            <field name="nid"/>
                             <field name="email"/>
                             <field name="phone"/>
                             <field name="address"/>
@@ -43,6 +42,6 @@
                 </sheet>
             </form>
         </field>
-    </record> -->
+    </record>
 
 </odoo>
