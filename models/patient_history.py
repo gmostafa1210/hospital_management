@@ -11,3 +11,4 @@ class HospitalPatientHistory(models.Model):
     patient_id = fields.Many2one(
         'hospital.patient', string='Patient Name')
     date = fields.Date(string='Date', default=date.today())
+    doctor_id = fields.Many2one('hospital.doctor', string='Doctor Name')

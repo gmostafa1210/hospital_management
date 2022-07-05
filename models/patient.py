@@ -30,7 +30,7 @@ class HospitalPatient(models.Model):
     img = fields.Image(string='Profile Image', attachment=True)
     address = fields.Text(string='Address')
 
-    history_ids = fields.One2many(
+    patient_history_ids = fields.One2many(
         'hospital.patient.history', 'patient_id', string='Patient History')
 
     def full_name(self):
