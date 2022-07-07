@@ -12,3 +12,4 @@ class HospitalPatientHistory(models.Model):
     patient_id = fields.Many2one('hospital.patient', string='Patient Name')
     doctor_id = fields.Many2one('hospital.doctor', string='Doctor Name')
     medicine_ids = fields.One2many('hospital.madicine', 'history_id', string='Madicine')
+    test_ids = fields.One2many('hospital.test', 'patient_test_id', string='Test')
