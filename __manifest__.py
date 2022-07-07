@@ -17,6 +17,7 @@
         'views/doctor_view.xml',
         'views/hospital_view.xml',
         'views/patient_view.xml',
+        'views/patient_history.xml',
     ],
     'installable': True,
     'application': True,

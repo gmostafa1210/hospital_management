@@ -8,7 +8,7 @@ class HospitalPatientHistory(models.Model):
     _name = 'hospital.patient.history'
     _description = 'Patient History Master Description.'
 
-    patient_id = fields.Many2one(
-        'hospital.patient', string='Patient Name')
     date = fields.Date(string='Date', default=date.today())
+    patient_id = fields.Many2one('hospital.patient', string='Patient Name')
     doctor_id = fields.Many2one('hospital.doctor', string='Doctor Name')
+    medicine_ids = fields.One2many('hospital.madicine', 'history_id', string='Madicine')
