@@ -29,8 +29,7 @@ class HospitalPatient(models.Model):
             ('female', 'Female')], string='Gender', default='male')
     img = fields.Image(string='Profile Image', attachment=True)
     address = fields.Text(string='Address')
-
-    patient_history_ids = fields.One2many(
+    history_ids = fields.One2many(
         'hospital.patient.history', 'patient_id', string='Patient History')
 
     def full_name(self):
@@ -43,7 +42,6 @@ class HospitalPatient(models.Model):
             first_name = self.first_name
         if self.last_name:
             last_name = self.last_name
-
         return first_name + ' ' + last_name
         
     def _get_full_name(self):
@@ -88,3 +86,16 @@ class HospitalPatient(models.Model):
         if values.get('patient_code', _('New')) == _('New'):
             values['patient_code'] = self.env['ir.sequence'].next_by_code('hospital.patient.sequence') or _('New')
         return super(HospitalPatient, self).create(values)
+    
+    def button_redrict_patient_history(self):
+        """
+        This function will redrict patient history.
+        """
+        self.ensure_one()
+        return {
+            'name': _('Patient History'),
+            'view_mode': 'tree,form',
+            'res_model': 'hospital.patient.history',
+            'type': 'ir.actions.act_window',
+            'domain': [('patient_id', '=', self.id)],
+        }

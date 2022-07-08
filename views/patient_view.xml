@@ -19,6 +19,9 @@
         <field name="model">hospital.patient</field>
         <field name="arch" type="xml">
             <form>
+                <header>
+                    <button name="button_redrict_patient_history" string="Patient History" type="object" class="oe_highlight"/>
+                </header>
                 <sheet>
                     <div class="oe_button_box" name="button_box"/>
                     <field name="img" widget="image" class="oe_avatar" options="{&quot;preview_image&quot;: &quot;image_128&quot;}"/>
@@ -42,15 +45,15 @@
                     </group>
                     <notebook>
                         <page string='Patient History'>
-                            <field name="patient_history_ids">
+                            <field name="history_ids">
                                 <tree>
-                                    <field name="patient_id"/>
+                                    <field name="doctor_id"/>
                                     <field name="date"/>
                                 </tree>
                                 <form>
                                     <group>
                                         <group>
-                                            <field name="patient_id"/>
+                                            <field name="doctor_id"/>
                                         </group>
                                         <group>
                                             <field name="date"/>
