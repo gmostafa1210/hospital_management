@@ -1,6 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    
+    <record id='hospital_prescription_report' model='ir.actions.report'>
+        <field name='name'>Prescription PDF</field>
+        <field name='model'>hospital.patient.history</field>
+        <field name='report_type'>qweb-pdf</field>
+        <field name='report_name'>hospital_management.hospital_prescription_report_document</field>
+        <field name='report_file'>hospital_management.hospital_prescription_report_document</field>
+        <field name="print_report_name">'Prescription - %s' % (object.patient_id.first_name)</field>
+        <field name='binding_model_id' ref='model_hospital_patient_history'/>
+        <field name='binding_type'>report</field>
+    </record>
+
+    <template id='hospital_prescription_report_document'>
+        <t t-call='web.html_container'>
+            <t t-call='web.basic_layout'>
+                <div class='page'>
+                    <t t-foreach='docs' t-as='doc'>
+                        <div class='text-center'>
+                            <h1><b>Reference Number# </b><t t-esc='doc.patient_id.patient_code'/></h1>
+                        </div>
+                        <div style='margin-top:30px;'> 
+                            <table class='offset-md-2 col-md-8 offset-md-2' >
+                                <tr>
+                                    <td><b>Name: </b><t t-esc='doc.patient_id.name'/></td>
+                                </tr>
+                                <tr>
+                                    <td><b>Doctor Name: </b><t t-esc='doc.doctor_id.name'/></td>
+                                </tr>
+                                <tr>
+                                    <td><b>Date: </b><t t-esc='doc.date'/></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class='offset-md-2 col-md-8 offset-md-2' style='margin-top:60px;'>
+                            <table class='table'>
+                                <tr>
+                                    <th>SL.</th>
+                                    <th>Medicine</th>
+                                    <th>MG/ML</th>
+                                    <th>Days</th>
+                                    <th>Quantity</th>
+                                    <th>When to Take</th>
+                                </tr>
+                                <t t-set='sn' t-value='1'/>
+                                <t t-foreach='doc.medicine_ids' t-as='meds'>
+                                    <tr>
+                                        <td><t t-esc='sn'/></td>
+                                        <td><t t-esc='meds.name'/></td>
+                                        <td><t t-esc='meds.mg_ml'/></td>
+                                        <td><t t-esc='meds.days'/></td>
+                                        <td><t t-esc='meds.quantity'/></td>
+                                        <td><t t-esc="dict(meds.fields_get(allfields=['when_to_take'])['when_to_take']['selection'])[meds.when_to_take]"/></td>
+                                    </tr>
+                                    <t t-set='sn' t-value='sn + 1'/>
+                                </t>
+                            </table>
+                            <p style="page-break-after:always;"/>
+                        </div>
+                    </t>
+                </div>
+            </t>
+        </t>
+    </template>
 
 </odoo>
