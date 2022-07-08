@@ -14,11 +14,14 @@
         </field>
     </record>
 
-    <!-- <record id="view_hospital_doctor_form" model="ir.ui.view">
+    <record id="view_hospital_doctor_form" model="ir.ui.view">
         <field name="name">hospital.doctor.form</field>
         <field name="model">hospital.doctor</field>
         <field name="arch" type="xml">
             <form>
+                <header>
+                    <button name="button_redrict_patient_history" string="Patient History" type="object" class="oe_highlight"/>
+                </header>
                 <sheet>
                     <div class="oe_button_box" name="button_box"/>
                     <field name="img" widget="image" class="oe_avatar" options="{&quot;preview_image&quot;: &quot;image_128&quot;}"/>
@@ -34,15 +37,36 @@
                             <field name="dob"/>
                         </group>
                         <group>
-                            <field name="nid"/>
+                            <field name="department"/>
+                            <field name="hospital_id"/>
                             <field name="email"/>
                             <field name="phone"/>
                             <field name="address"/>
                         </group>
                     </group>
+                    <notebook>
+                        <page string='Patient History'>
+                            <field name="history_ids">
+                                <tree>
+                                    <field name="patient_id"/>
+                                    <field name="date"/>
+                                </tree>
+                                <form>
+                                    <group>
+                                        <group>
+                                            <field name="patient_id"/>
+                                        </group>
+                                        <group>
+                                            <field name="date"/>
+                                        </group>
+                                    </group>
+                                </form>
+                            </field>
+                        </page>
+                    </notebook>
                 </sheet>
             </form>
         </field>
-    </record> -->
+    </record>
 
 </odoo>

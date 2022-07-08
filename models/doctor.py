@@ -26,6 +26,21 @@ class HospitalDoctor(models.Model):
     age = fields.Integer(string='Age', compute='_get_age')
     gender = fields.Selection([('male', 'Male'), 
             ('female', 'Female')], string='Gender', default='male')
+    history_ids = fields.One2many(
+            'hospital.patient.history', 'doctor_id', string='Patient History')
+    department = fields.Selection([('allergists_immunologists', 'Allergists/Immunologists'),
+            ('anesthesiologists', 'Anesthesiologists'),
+            ('cardiologists', 'Cardiologists'),
+            ('gastroenterologists', 'Gastroenterologists'),
+            ('neurologists', 'Neurologists'),
+            ('psychiatrists', 'Psychiatrists'),
+            ('dermatologists', 'Dermatologists'),
+            ('family_physicians', 'Family Physicians'),
+            ('pediatricians', 'Pediatricians'),
+            ('urologist', 'Urologist'),
+            ('eye_specialist', ' Eye Specialist'),
+            ('ent', 'ENT'),
+            ('dental', 'Dental')], string='Department', default='allergists_immunologists', required=True)
     img = fields.Binary(string='Profile Image', attachment=True)
     address = fields.Text(string='Address')
 
@@ -42,7 +57,6 @@ class HospitalDoctor(models.Model):
             first_name = self.first_name
         if self.last_name:
             last_name = self.last_name
-
         return first_name + ' ' + last_name
         
     def _get_full_name(self):
@@ -87,4 +101,17 @@ class HospitalDoctor(models.Model):
         if values.get('doctor_code', _('New')) == _('New'):
             values['doctor_code'] = self.env['ir.sequence'].next_by_code('hospital.doctor.sequence') or _('New')
         return super(HospitalDoctor, self).create(values)
+
+    def button_redrict_patient_history(self):
+        """
+        This function will redrict patient history.
+        """
+        self.ensure_one()
+        return {
+            'name': _('Patient History'),
+            'view_mode': 'tree,form',
+            'res_model': 'hospital.patient.history',
+            'type': 'ir.actions.act_window',
+            'domain': [('doctor_id', '=', self.id)],
+        }
 
