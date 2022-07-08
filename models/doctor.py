@@ -26,8 +26,8 @@ class HospitalDoctor(models.Model):
     age = fields.Integer(string='Age', compute='_get_age')
     gender = fields.Selection([('male', 'Male'), 
             ('female', 'Female')], string='Gender', default='male')
-    doctor_history_ids = fields.One2many(
-            'hospital.patient.history', 'doctor_id', string='Doctor History')
+    history_ids = fields.One2many(
+            'hospital.patient.history', 'doctor_id', string='Patient History')
     department = fields.Selection([('allergists_immunologists', 'Allergists/Immunologists'),
             ('anesthesiologists', 'Anesthesiologists'),
             ('cardiologists', 'Cardiologists'),

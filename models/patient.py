@@ -29,7 +29,7 @@ class HospitalPatient(models.Model):
             ('female', 'Female')], string='Gender', default='male')
     img = fields.Image(string='Profile Image', attachment=True)
     address = fields.Text(string='Address')
-    patient_history_ids = fields.One2many(
+    history_ids = fields.One2many(
         'hospital.patient.history', 'patient_id', string='Patient History')
 
     def full_name(self):

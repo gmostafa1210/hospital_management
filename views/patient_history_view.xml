@@ -18,47 +18,53 @@
         <field name="model">hospital.patient.history</field>
         <field name="arch" type="xml">
             <form>
+                <header>
+                    <button name="action_done" string="Done" type="object" class="oe_highlight"/>
+                    <button name="action_pending" string="Reset to Pending" type="object" class="oe_highlight"/>
+                    <field name="state" widget="statusbar"/>
+                </header>
                 <sheet>
                     <group>
-                        <field name="patient_id"/>
-                        <field name="doctor_id"/>
-                        <field name="date"/>
+                        <group>
+                            <field name="patient_id"/>
+                            <field name="doctor_id"/>
+                            <field name="hospital_id"/>
+                            <field name="date"/>
+                        </group>
+                        <group>
+                            <field name="symptoms"/>
+                        </group>
                     </group>
                     <notebook>
-                        <page string='Medicine'>
-                            <field name="medicine_ids">
+                        <page string='Test'>
+                            <field name="test_ids">
                                 <tree>
                                     <field name="name"/>
-                                    <field name="mg_ml"/>
+                                    <field name="date"/>
                                 </tree>
                                 <form>
                                     <group>
                                         <group>
                                             <field name="name"/>
+                                            <field name="date"/>
+                                            <field name="result"/>
                                         </group>
                                         <group>
-                                            <field name="mg_ml"/>
+                                            <field name="test_copy" widget="image"/>
                                         </group>
                                     </group>
                                 </form>
                             </field>
                         </page>
-                        <page string='Test'>
-                            <field name="test_ids">
-                                <tree>
+                        <page string='Medicine'>
+                            <field name="medicine_ids">
+                                <tree editable="bottom">
                                     <field name="name"/>
+                                    <field name="mg_ml"/>
+                                    <field name="days"/>
+                                    <field name="quantity"/>
+                                    <field name="when_to_take"/>
                                 </tree>
-                                <form>
-                                    <group>
-                                        <group>
-                                            <field name="name"/>
-                                            <field name="test_copy"/>
-                                        </group>
-                                        <group>
-                                            <field name="result"/>
-                                        </group>
-                                    </group>
-                                </form>
                             </field>
                         </page>
                     </notebook>            

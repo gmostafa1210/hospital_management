@@ -12,5 +12,4 @@ class HospitalTest(models.Model):
     name = fields.Char(string='Test Name')
     test_copy = fields.Binary(string='Test Copy')
     result = fields.Text(string='Remarks')
-    patient_test_id = fields.Many2one(
-            'hospital.patient.history', string='History')
+    date = fields.Date(string='Test Date', default=date.today())

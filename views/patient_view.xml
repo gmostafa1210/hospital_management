@@ -45,15 +45,15 @@
                     </group>
                     <notebook>
                         <page string='Patient History'>
-                            <field name="patient_history_ids">
+                            <field name="history_ids">
                                 <tree>
-                                    <field name="patient_id"/>
+                                    <field name="doctor_id"/>
                                     <field name="date"/>
                                 </tree>
                                 <form>
                                     <group>
                                         <group>
-                                            <field name="patient_id"/>
+                                            <field name="doctor_id"/>
                                         </group>
                                         <group>
                                             <field name="date"/>
