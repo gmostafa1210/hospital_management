@@ -18,6 +18,8 @@
         'views/hospital_view.xml',
         'views/patient_view.xml',
         'views/patient_history_view.xml',
+
+        'report/patient_prescription_report_view.xml',
     ],
     'installable': True,
     'application': True,

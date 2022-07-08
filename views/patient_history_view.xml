@@ -9,6 +9,7 @@
                 <field name="patient_id"/>
                 <field name="doctor_id"/>
                 <field name="date"/>
+                <field name="state"/>
             </tree>
         </field>
     </record>
