@@ -11,8 +11,3 @@ class HospitalMadicine(models.Model):
 
     name = fields.Char(string='Madicine Name', required=True)
     mg_ml = fields.Float(string='MG/ML')
-    days = fields.Integer(string='Days')
-    quantity = fields.Integer(string='Quantity')
-    when_to_take = fields.Selection([
-            ('before', 'Before Meal'), ('after', 'After Meal')], string='When to Take')
-    patient_history_id = fields.Many2one('hospital.patient.history', string='Patient History')

@@ -12,6 +12,7 @@ class HospitalHospital(models.Model):
             copy=False, readonly=True, index=True, default=lambda self: _('New'))
     patient_capacity = fields.Integer(string='Patient Capacity')
     available_doctor = fields.Integer(string='Available Doctor')
+    website = fields.Char(string='Website')
     address = fields.Text(string='Address')
     doctor_ids = fields.One2many(
         'hospital.doctor', 'hospital_id', string='Doctor List')
