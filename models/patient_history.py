@@ -50,3 +50,8 @@ class HospitalHistoryMadicineLine(models.Model):
     when_to_take = fields.Selection([
             ('before', 'Before Meal'), ('after', 'After Meal')], string='When to Take')
     patient_history_id = fields.Many2one('hospital.patient.history', string='Patient History')
+
+    @api.onchange('madicine_id')
+    def onchange_madicine_id(self):
+        if self.madicine_id:
+            self.mg_ml = self.madicine_id.mg_ml

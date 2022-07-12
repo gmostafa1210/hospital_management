@@ -20,8 +20,8 @@
         <field name="arch" type="xml">
             <form>
                 <header>
-                    <button name="action_done" string="Done" type="object" class="oe_highlight"/>
-                    <button name="action_pending" string="Reset to Pending" type="object" class="oe_highlight"/>
+                    <button name="action_done" string="Done" type="object" class="oe_highlight" groups="hospital_management.hospital_management_user_access_doctor" attrs="{'invisible': [('state', '=', 'done')]}"/>
+                    <button name="action_pending" string="Reset to Pending" type="object" class="oe_highlight" groups="hospital_management.hospital_management_user_access_doctor" attrs="{'invisible': [('state', '=', 'pending')]}"/>
                     <field name="state" widget="statusbar"/>
                 </header>
                 <sheet>
