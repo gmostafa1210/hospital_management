@@ -20,6 +20,8 @@
         'views/patient_history_view.xml',
 
         'report/patient_prescription_report_view.xml',
+
+        'views/website_appointment_form.xml',
     ],
     'installable': True,
     'application': True,

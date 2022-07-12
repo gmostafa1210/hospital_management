@@ -53,5 +53,5 @@ class HospitalHistoryMadicineLine(models.Model):
 
     @api.onchange('madicine_id')
     def onchange_madicine_id(self):
-        if self.madicine_id:
+        if self.madicine_id and self.madicine_id.mg_ml:
             self.mg_ml = self.madicine_id.mg_ml

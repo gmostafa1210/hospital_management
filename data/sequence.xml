@@ -5,7 +5,7 @@
             <field name="name">Patient Sequence</field>
             <field name="code">hospital.patient.sequence</field>
             <field name="prefix">P</field>
-            <field name="padding">6</field>
+            <field name="padding">5</field>
         </record>
     </data>
 
@@ -14,7 +14,7 @@
             <field name="name">Doctor Sequence</field>
             <field name="code">hospital.doctor.sequence</field>
             <field name="prefix">D</field>
-            <field name="padding">6</field>
+            <field name="padding">5</field>
         </record>
     </data>
 
@@ -23,7 +23,7 @@
             <field name="name">Hospital Sequence</field>
             <field name="code">hospital.hospital.sequence</field>
             <field name="prefix">H</field>
-            <field name="padding">6</field>
+            <field name="padding">4</field>
         </record>
     </data>
 </odoo>
