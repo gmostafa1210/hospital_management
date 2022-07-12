@@ -127,3 +127,13 @@ class HospitalDoctor(models.Model):
         if name:
             domain = ['|', '|', '|', ('first_name', operator, name), ('last_name', operator, name), ('phone', operator, name), ('doctor_code', operator, name)] 
         return self._search(domain + args, limit=limit, access_rights_uid=name_get_uid)
+
+    def name_get(self):
+        """
+        This function will return the full name of the doctor with doctor code.
+        """
+        result = []
+        for rec in self:
+            result.append((rec.id, '%s - %s' % (rec.doctor_code, rec.full_name())))
+        return result
+
