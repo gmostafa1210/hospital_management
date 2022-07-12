@@ -4,6 +4,7 @@
     <menuitem 
         id='menu_hospital_management'
         name='Hospital Management'
+        sequence='1'
         web_icon='hospital_management,static/description/icon.jpg'/>
 
     <record id="action_hospital_management_doctor" model="ir.actions.act_window">

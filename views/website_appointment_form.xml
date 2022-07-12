@@ -12,17 +12,31 @@
             <div id="wrap">
                 <div class="oe_structure">
                     <div class="container">
-                        <form role="form" action="/create/appointment_form" method="POST">
+                        <form role="form" action="/create/appointment" method="POST">
                             <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                            <br/>
                             <div class="form-group">
-                                <label for="patient_name" class="control-label">Name</label>
-                                <input type="text" name="patient_name" t-att-value="patient_name" id="patient_name"
-                                       class="form-control" placeholder="e.g. John Doe" required="required"/>
+                                <label for="first_name" class="control-label">First Name</label>
+                                <input type="text" name="first_name" t-att-value="first_name" id="first_name"
+                                       class="form-control" placeholder="Enter First Name (Required)" required="required"/>
                             </div>
                             <div class="form-group">
-                                <label for="email" class="control-label">Email</label>
-                                <input type="email" name="email_id" t-att-value="email_id" id="email_id"
-                                       class="form-control" required="required"/>
+                                <label for="last_name" class="control-label">Last Name</label>
+                                <input type="text" name="last_name" t-att-value="last_name" id="last_name"
+                                       class="form-control" placeholder="Enter Last Name"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone" class="control-label">Phone</label>
+                                <input type="tel" name="phone" t-att-value="phone" id="phone"
+                                       class="form-control"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="hospital_id" class="control-label">Hospital</label>
+                                <select name="hospital_id" class="form-control link-style">
+                                    <t t-foreach='hospital_rec' t-as="hospital">
+                                        <option t-esc='hospital.name' t-att-value='hospital.id'/>
+                                    </t>
+                                </select>
                             </div>
                             <div class="form-group">
                                 <label for="doctor_id" class="control-label">Doctor</label>
@@ -33,8 +47,9 @@
                                 </select>
                             </div>
                             <div class="clearfix oe_login_buttons">
-                                <button type="submit" class="btn btn-primary pull-left">Create Patient</button>
+                                <button type="submit" class="btn btn-primary pull-left">Create Appointment</button>
                             </div>
+                            <br/>
                         </form>
                     </div>
                 </div>
