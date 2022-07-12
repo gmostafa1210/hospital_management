@@ -28,11 +28,11 @@
                             <div class="form-group">
                                 <label for="phone" class="control-label">Phone</label>
                                 <input type="tel" name="phone" t-att-value="phone" id="phone"
-                                       class="form-control"/>
+                                       class="form-control" required="required"/>
                             </div>
                             <div class="form-group">
                                 <label for="hospital_id" class="control-label">Hospital</label>
-                                <select name="hospital_id" class="form-control link-style">
+                                <select name="hospital_id" class="form-control link-style" required="required">
                                     <t t-foreach='hospital_rec' t-as="hospital">
                                         <option t-esc='hospital.name' t-att-value='hospital.id'/>
                                     </t>
@@ -40,7 +40,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="doctor_id" class="control-label">Doctor</label>
-                                <select name="doctor_id" class="form-control link-style">
+                                <select name="doctor_id" class="form-control link-style" required="required">
                                     <t t-foreach='doctor_rec' t-as="doctor">
                                         <option t-esc='doctor.name' t-att-value='doctor.id'/>
                                     </t>
