@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from ctypes.wintypes import MSG
-from odoo import models, api, fields, _
-from datetime import date
+from odoo import models, fields
 
 
 class HospitalMadicine(models.Model):

@@ -41,6 +41,7 @@
                             <field name="hospital_id"/>
                             <field name="email"/>
                             <field name="phone"/>
+                            <field name="nid"/>
                             <field name="address"/>
                         </group>
                     </group>

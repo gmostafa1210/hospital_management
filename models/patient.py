@@ -13,6 +13,7 @@ class HospitalPatient(models.Model):
     _sql_constraints = [
         ('phone_unique', 'unique(phone)', 'Phone number already exists!'),
         ('email_unique', 'unique(email)', 'Email already exists!'),
+        ('nid_unique', 'unique(nid)', 'NID already exists!'),
     ]
 
     first_name = fields.Char(string='First Name', required=True)

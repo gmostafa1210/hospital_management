@@ -40,13 +40,13 @@
                         <page string='Test'>
                             <field name="test_line_ids">
                                 <tree>
-                                    <field name="name"/>
+                                    <field name="test_id"/>
                                     <field name="date"/>
                                 </tree>
                                 <form>
                                     <group>
                                         <group>
-                                            <field name="name"/>
+                                            <field name="test_id"/>
                                             <field name="date"/>
                                             <field name="result"/>
                                         </group>
@@ -57,10 +57,10 @@
                                 </form>
                             </field>
                         </page>
-                        <page string='Medicine'>
-                            <field name="medicine_line_ids">
+                        <page string='Madicine'>
+                            <field name="madicine_line_ids">
                                 <tree editable="bottom">
-                                    <field name="name"/>
+                                    <field name="madicine_id"/>
                                     <field name="mg_ml"/>
                                     <field name="days"/>
                                     <field name="quantity"/>

@@ -13,6 +13,7 @@ class HospitalDoctor(models.Model):
     _sql_constraints = [
         ('phone_unique', 'unique(phone)', 'Phone number already exists!'),
         ('email_unique', 'unique(email)', 'Email already exists!'),
+        ('nid_unique', 'unique(nid)', 'NID already exists!'),
     ]
 
     first_name = fields.Char(string='First Name', required=True)
@@ -22,6 +23,7 @@ class HospitalDoctor(models.Model):
             copy=False, readonly=True, index=True, default=lambda self: _('New'))
     email = fields.Char(string='Email', required=True)
     phone = fields.Char(string='Phone', required=True)
+    nid = fields.Char(string='NID Number')
     dob = fields.Date(string='DOB')
     age = fields.Integer(string='Age', compute='_get_age')
     gender = fields.Selection([('male', 'Male'), 
@@ -114,4 +116,3 @@ class HospitalDoctor(models.Model):
             'type': 'ir.actions.act_window',
             'domain': [('doctor_id', '=', self.id)],
         }
-

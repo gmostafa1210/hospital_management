@@ -17,7 +17,7 @@ class HospitalPatientHistory(models.Model):
     state = fields.Selection([
             ('pending', 'Pending'), ('done', 'Done')], string='State', default='pending')
     test_line_ids = fields.One2many('hospital.history.test.line', 'patient_history_id', string='Test Line')
-    medicine_line_ids = fields.One2many('hospital.history.madicine.line', 'patient_history_id', string='Medicine Line')
+    madicine_line_ids = fields.One2many('hospital.history.madicine.line', 'patient_history_id', string='Madicine Line')
 
     def action_done(self):
         self.state = 'done'
@@ -29,8 +29,9 @@ class HospitalPatientHistory(models.Model):
 class HospitalHistoryTestLine(models.Model):
     _name = 'hospital.history.test.line'
     _description = 'Patient History Test Line Master Description.'
+    _rec_name = 'test_id'
 
-    name = fields.Many2one('hospital.test', string='Test Name')
+    test_id = fields.Many2one('hospital.test', string='Test Name')
     test_copy = fields.Binary(string='Test Copy')
     result = fields.Text(string='Remarks')
     date = fields.Date(string='Test Date', default=date.today())
@@ -40,8 +41,9 @@ class HospitalHistoryTestLine(models.Model):
 class HospitalHistoryMadicineLine(models.Model):
     _name = 'hospital.history.madicine.line'
     _description = 'Patient History Madicine Line Master Description.'
+    _rec_name = 'madicine_id'
 
-    name = fields.Many2one('hospital.madicine', string='Madicine Name')
+    madicine_id = fields.Many2one('hospital.madicine', string='Madicine Name')
     mg_ml = fields.Float(string='MG/ML')
     days = fields.Integer(string='Days')
     quantity = fields.Integer(string='Quantity')
