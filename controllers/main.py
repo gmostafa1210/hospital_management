@@ -12,6 +12,13 @@ class HospitalAppointment(http.Controller):
         return http.request.render('hospital_management.take_appointment_form', {})
 
     @http.route('/create/appointment', type="http", auth="public", website=True)
-    def create_appointment_form(self, **kw):
-        # request.env['hospital.patient.history'].sudo().create(kw)
+    def create_patient(self, **kw):
+        if kw:
+            phone_number = kw['phone']
+            patient_rec = request.env['hospital.patient'].sudo().search([('phone', '=', phone_number)])
+        # request.env['hospital.patient'].sudo().create(kw)
+        if patient_rec:
+            print("##################Patient Already Exist", patient_rec)
+        else:
+            request.env['hospital.patient'].sudo().create(kw)
         return request.render("hospital_management.patient_thanks", {})
