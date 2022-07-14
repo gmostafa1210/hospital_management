@@ -15,7 +15,6 @@ class HospitalAppointment(http.Controller):
         if kw:
             phone_number = kw['phone']
             patient_rec = request.env['hospital.patient'].sudo().search([('phone', '=', phone_number)])
-            # hospital_rec = request.env['hospital.hospital'].sudo().search([])
             doctor_rec = request.env['hospital.doctor'].sudo().search([])
             if not patient_rec:
                 request.env['hospital.patient'].sudo().create(kw)

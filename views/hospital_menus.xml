@@ -18,6 +18,7 @@
         action='action_hospital_management_doctor'
         name='Doctor'
         parent='menu_hospital_management'
+        groups='hospital_management.hospital_management_user_access_doctor'
         sequence='1'/>
 
     <record id="action_hospital_management_patient" model="ir.actions.act_window">
@@ -31,6 +32,7 @@
         action='action_hospital_management_patient'
         name='Patient'
         parent='menu_hospital_management'
+        groups='hospital_management.hospital_management_user_access_admin'
         sequence='2'/>
 
     <record id="action_hospital_management_hospital" model="ir.actions.act_window">
@@ -44,6 +46,14 @@
         action='action_hospital_management_hospital'
         name='Hospital'
         parent='menu_hospital_management'
+        groups='hospital_management.hospital_management_user_access_admin'
         sequence='3'/>
 
+    <menuitem 
+        action="base.action_res_users" 
+        id="menu_action_res_users_hospital" 
+        parent="menu_hospital_management" 
+        groups='hospital_management.hospital_management_user_access_admin'
+        sequence="4"/>
+    
 </odoo>

@@ -64,14 +64,6 @@
                                     <option t-esc='new_patient_rec.name' t-att-value='new_patient_rec.id'/>
                                 </select>
                             </div>
-                            <!-- <div class="form-group">
-                                <label for="hospital_id" class="control-label">Hospital</label>
-                                <select name="hospital_id" class="form-control link-style" >
-                                    <t t-foreach='hospital_rec' t-as="hospital">
-                                        <option t-esc='hospital.name' t-att-value='hospital.id'/>
-                                    </t>
-                                </select>
-                            </div> -->
                             <div class="form-group">
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6">
