@@ -15,12 +15,12 @@ class HospitalAppointment(http.Controller):
         if kw:
             phone_number = kw['phone']
             patient_rec = request.env['hospital.patient'].sudo().search([('phone', '=', phone_number)])
-            hospital_rec = request.env['hospital.hospital'].sudo().search([])
+            # hospital_rec = request.env['hospital.hospital'].sudo().search([])
             doctor_rec = request.env['hospital.doctor'].sudo().search([])
             if not patient_rec:
                 request.env['hospital.patient'].sudo().create(kw)
             new_patient_rec = request.env['hospital.patient'].sudo().search([('phone', '=', phone_number)])
-            return http.request.render('hospital_management.patient_appointment', {'new_patient_rec': new_patient_rec, 'hospital_rec': hospital_rec, 'doctor_rec': doctor_rec})
+            return http.request.render('hospital_management.patient_appointment', {'new_patient_rec': new_patient_rec, 'doctor_rec': doctor_rec})
 
     @http.route('/create/appointment', type="http", auth="public", website=True)
     def create_appointment(self, **kw):

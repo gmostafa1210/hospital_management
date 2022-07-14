@@ -64,26 +64,32 @@
                                     <option t-esc='new_patient_rec.name' t-att-value='new_patient_rec.id'/>
                                 </select>
                             </div>
-                            <div class="form-group">
+                            <!-- <div class="form-group">
                                 <label for="hospital_id" class="control-label">Hospital</label>
                                 <select name="hospital_id" class="form-control link-style" >
                                     <t t-foreach='hospital_rec' t-as="hospital">
                                         <option t-esc='hospital.name' t-att-value='hospital.id'/>
                                     </t>
                                 </select>
+                            </div> -->
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6">
+                                        <label for="doctor_id" class="control-label">Doctor</label>
+                                        <select name="doctor_id" class="form-control link-style" required="required">
+                                            <t t-foreach='doctor_rec' t-as="doctor">
+                                                <option t-esc='doctor.name' t-att-value='doctor.id'/>
+                                            </t>
+                                        </select>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6"/>
+                                </div>
                             </div>
                             <div class="form-group">
-                                <label for="doctor_id" class="control-label">Doctor</label>
-                                <select name="doctor_id" class="form-control link-style" >
-                                    <t t-foreach='doctor_rec' t-as="doctor">
-                                        <option t-esc='doctor.name' t-att-value='doctor.id'/>
-                                    </t>
-                                </select>
-                            </div><div class="form-group">
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6">
                                         <label for="date" class="control-label">Appointment Date</label>
-                                        <input id="date" type="date" name="date" class="form-control o_website_form_input o_website_form_date"/>
+                                        <input id="date" type="date" name="date" class="form-control o_website_form_input o_website_form_date" required="required"/>
                                     </div>
                                     <div class="col-lg-6 col-md-6"/>
                                 </div>
