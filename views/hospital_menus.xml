@@ -53,7 +53,19 @@
         action="base.action_res_users" 
         id="menu_action_res_users_hospital" 
         parent="menu_hospital_management" 
-        groups='hospital_management.hospital_management_user_access_admin'
+        groups="hospital_management.hospital_management_user_access_admin"
         sequence="4"/>
+
+    <menuitem 
+        name="Discuss"
+        id="mail.menu_root_discuss"
+        groups="make_invisible_hospital"
+        sequence="80"/>
+
+    <menuitem 
+        name="Website"
+        id="website.menu_website_configuration"
+        groups="make_invisible_hospital"
+        sequence="80"/>
     
 </odoo>

@@ -20,4 +20,8 @@
         <field name='users' eval='[(4, ref("base.user_admin"))]'/>
     </record>
 
+    <record id="make_invisible_hospital" model="res.groups">
+        <field name="name">Invisible</field>
+    </record>
+
 </odoo>

@@ -6,7 +6,7 @@
     'sequence': 1,
     'summary': 'Hospital Management Summary',
     'description': 'Hospital Management Description.',
-    'depends': ['base', 'website'],
+    'depends': ['base', 'website', 'mail'],
     'data': [
         'security/hospital_security.xml',
         'security/ir.model.access.csv',
@@ -14,6 +14,7 @@
         'data/sequence.xml',
 
         'views/hospital_menus.xml',
+        'views/res_users_view.xml',
         'views/doctor_view.xml',
         'views/hospital_view.xml',
         'views/patient_view.xml',
