@@ -30,6 +30,7 @@
                             <field name="patient_id"/>
                             <field name="doctor_id"/>
                             <field name="hospital_id"/>
+                            <field name="department_id"/>
                             <field name="date"/>
                         </group>
                         <group>
