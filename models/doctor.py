@@ -123,3 +123,23 @@ class HospitalDoctor(models.Model):
             result.append((rec.id, '%s - %s' % (rec.doctor_code, rec.full_name())))
         return result
 
+    @api.onchange('hospital_id')
+    def onchange_hospital_id(self):
+        """
+        This function will remove the department from the 
+        department field when the hospital is changed.
+        """
+        self.department_id = False
+
+    @api.onchange('hospital_id', 'department_id')
+    def domain_set(self):
+        """
+        This function will set the domain of the department.
+        """
+        dept_list = []
+        if self.hospital_id:
+            hospital_obj = self.env['hospital.hospital'].search([('id', '=', self.hospital_id.id)])
+            if hospital_obj:
+                for dept in hospital_obj.department_ids:
+                    dept_list.append(dept.id)
+            return {'domain': {'department_id': [('id', 'in', dept_list)]}}
