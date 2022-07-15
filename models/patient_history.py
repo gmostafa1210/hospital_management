@@ -26,6 +26,19 @@ class HospitalPatientHistory(models.Model):
     def action_pending(self):
         self.state = 'pending'
 
+    def button_redrict_patient_history(self):
+        """
+        This function will redrict patient history.
+        """
+        self.ensure_one()
+        return {
+            'name': _('Patient History'),
+            'view_mode': 'tree,form',
+            'res_model': 'hospital.patient.history',
+            'type': 'ir.actions.act_window',
+            'domain': [('patient_id', '=', self.patient_id.id)],
+        }
+
 
 class HospitalHistoryTestLine(models.Model):
     _name = 'hospital.history.test.line'

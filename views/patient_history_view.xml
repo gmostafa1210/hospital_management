@@ -22,6 +22,7 @@
                 <header>
                     <button name="action_done" string="Done" type="object" class="oe_highlight" groups="hospital_management.hospital_management_user_access_doctor" attrs="{'invisible': [('state', '=', 'done')]}"/>
                     <button name="action_pending" string="Reset to Pending" type="object" class="oe_highlight" groups="hospital_management.hospital_management_user_access_doctor" attrs="{'invisible': [('state', '=', 'pending')]}"/>
+                    <button name="button_redrict_patient_history" string="Patient History" type="object" class="oe_highlight"/>
                     <field name="state" widget="statusbar"/>
                 </header>
                 <sheet>

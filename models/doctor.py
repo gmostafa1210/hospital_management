@@ -90,13 +90,13 @@ class HospitalDoctor(models.Model):
             values['doctor_code'] = self.env['ir.sequence'].next_by_code('hospital.doctor.sequence') or _('New')
         return super(HospitalDoctor, self).create(values)
 
-    def button_redrict_patient_history(self):
+    def button_redrict_patient_list(self):
         """
-        This function will redrict patient history.
+        This function will redrict patient list.
         """
         self.ensure_one()
         return {
-            'name': _('Patient History'),
+            'name': _('Patient List'),
             'view_mode': 'tree,form',
             'res_model': 'hospital.patient.history',
             'type': 'ir.actions.act_window',
