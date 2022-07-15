@@ -50,8 +50,12 @@
                                 <tree>
                                     <field name="patient_id"/>
                                     <field name="date"/>
+                                    <field name="state"/>
                                 </tree>
                                 <form>
+                                    <header>
+                                        <button name="button_redrict_patient_history" string="Patient History" type="object" class="oe_highlight"/>
+                                    </header>
                                     <group>
                                         <group>
                                             <field name="patient_id"/>

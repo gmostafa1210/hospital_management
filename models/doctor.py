@@ -100,7 +100,7 @@ class HospitalDoctor(models.Model):
             'view_mode': 'tree,form',
             'res_model': 'hospital.patient.history',
             'type': 'ir.actions.act_window',
-            'domain': [('doctor_id', '=', self.id)],
+            'domain': [('doctor_id', '=', self.id), ('state','=','pending')],
         }
 
     @api.model
