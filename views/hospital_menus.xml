@@ -4,6 +4,7 @@
     <menuitem 
         id='menu_hospital_management'
         name='Hospital Management'
+        sequence='1'
         web_icon='hospital_management,static/description/icon.jpg'/>
 
     <record id="action_hospital_management_doctor" model="ir.actions.act_window">
@@ -17,6 +18,7 @@
         action='action_hospital_management_doctor'
         name='Doctor'
         parent='menu_hospital_management'
+        groups='hospital_management.hospital_management_user_access_doctor'
         sequence='1'/>
 
     <record id="action_hospital_management_patient" model="ir.actions.act_window">
@@ -30,6 +32,7 @@
         action='action_hospital_management_patient'
         name='Patient'
         parent='menu_hospital_management'
+        groups='hospital_management.hospital_management_user_access_admin'
         sequence='2'/>
 
     <record id="action_hospital_management_hospital" model="ir.actions.act_window">
@@ -43,6 +46,68 @@
         action='action_hospital_management_hospital'
         name='Hospital'
         parent='menu_hospital_management'
+        groups='hospital_management.hospital_management_user_access_admin'
         sequence='3'/>
 
+    <record id="action_hospital_management_department" model="ir.actions.act_window">
+        <field name="name">Departments</field>
+        <field name="res_model">hospital.department</field>
+        <field name="view_mode">tree</field>
+    </record>
+
+    <menuitem 
+        id='menu_hospital_management_department'
+        action='action_hospital_management_department'
+        name='Department'
+        parent='menu_hospital_management'
+        groups='hospital_management.hospital_management_user_access_admin'
+        sequence='4'/>
+
+    <record id="action_hospital_management_madicine" model="ir.actions.act_window">
+        <field name="name">Madicine</field>
+        <field name="res_model">hospital.madicine</field>
+        <field name="view_mode">tree</field>
+    </record>
+
+    <menuitem 
+        id='menu_hospital_management_madicine'
+        action='action_hospital_management_madicine'
+        name='Madicine'
+        parent='menu_hospital_management'
+        groups='hospital_management.hospital_management_user_access_doctor'
+        sequence='5'/>
+
+    <record id="action_hospital_management_test" model="ir.actions.act_window">
+        <field name="name">Test</field>
+        <field name="res_model">hospital.test</field>
+        <field name="view_mode">tree</field>
+    </record>
+
+    <menuitem 
+        id='menu_hospital_management_test'
+        action='action_hospital_management_test'
+        name='Test'
+        parent='menu_hospital_management'
+        groups='hospital_management.hospital_management_user_access_doctor'
+        sequence='6'/>
+
+    <menuitem 
+        action="base.action_res_users" 
+        id="menu_action_res_users_hospital" 
+        parent="menu_hospital_management" 
+        groups="hospital_management.hospital_management_user_access_admin"
+        sequence="7"/>
+
+    <menuitem 
+        name="Discuss"
+        id="mail.menu_root_discuss"
+        groups="make_invisible_hospital"
+        sequence="80"/>
+
+    <menuitem 
+        name="Website"
+        id="website.menu_website_configuration"
+        groups="make_invisible_hospital"
+        sequence="80"/>
+    
 </odoo>

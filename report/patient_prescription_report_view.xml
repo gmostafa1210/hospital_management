@@ -37,21 +37,23 @@
                             <table class='table'>
                                 <tr>
                                     <th>SL.</th>
-                                    <th>Medicine</th>
+                                    <th>Madicine</th>
                                     <th>MG/ML</th>
                                     <th>Days</th>
                                     <th>Quantity</th>
                                     <th>When to Take</th>
                                 </tr>
                                 <t t-set='sn' t-value='1'/>
-                                <t t-foreach='doc.medicine_ids' t-as='meds'>
+                                <t t-foreach='doc.madicine_line_ids' t-as='meds'>
                                     <tr>
                                         <td><t t-esc='sn'/></td>
-                                        <td><t t-esc='meds.name'/></td>
+                                        <td><t t-esc='meds.madicine_id.name'/></td>
                                         <td><t t-esc='meds.mg_ml'/></td>
                                         <td><t t-esc='meds.days'/></td>
                                         <td><t t-esc='meds.quantity'/></td>
-                                        <td><t t-esc="dict(meds.fields_get(allfields=['when_to_take'])['when_to_take']['selection'])[meds.when_to_take]"/></td>
+                                        <td><t t-if="meds.when_to_take == 'before' or meds.when_to_take == 'after'">
+                                            <t t-esc="dict(meds.fields_get(allfields=['when_to_take'])['when_to_take']['selection'])[meds.when_to_take]"/>
+                                        </t></td>
                                     </tr>
                                     <t t-set='sn' t-value='sn + 1'/>
                                 </t>

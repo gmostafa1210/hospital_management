@@ -6,13 +6,6 @@
         <field name='sequence'>1</field>
     </record>
 
-    <record id='hospital_management_user_access_patient' model='res.groups'>
-        <field name='name'>Patient</field>
-        <field name='implied_ids' eval='[(4, ref("base.group_user"))]'/>
-        <field name='category_id' ref='hospital_management.hospital_management_user_access'/>
-        <field name='users' eval='[(4, ref("base.user_admin"))]'/>
-    </record>
-
     <record id='hospital_management_user_access_doctor' model='res.groups'>
         <field name='name'>Doctor</field>
         <field name='implied_ids' eval='[(4, ref("base.group_user"))]'/>
@@ -22,9 +15,13 @@
 
     <record id='hospital_management_user_access_admin' model='res.groups'>
         <field name='name'>Administrator</field>
-        <field name="implied_ids" eval="[(4, ref('hospital_management.hospital_management_user_access_patient')), (4, ref('hospital_management.hospital_management_user_access_doctor'))]"/>
+        <field name="implied_ids" eval="[(4, ref('hospital_management.hospital_management_user_access_doctor'))]"/>
         <field name='category_id' ref='hospital_management.hospital_management_user_access'/>
         <field name='users' eval='[(4, ref("base.user_admin"))]'/>
+    </record>
+
+    <record id="make_invisible_hospital" model="res.groups">
+        <field name="name">Invisible</field>
     </record>
 
 </odoo>

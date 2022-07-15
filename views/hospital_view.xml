@@ -32,6 +32,8 @@
                             <field name="patient_capacity"/>
                         </group>
                         <group>
+                            <field name="department_ids" widget="many2many_tags"/>
+                            <field name="website"/>
                             <field name="address"/>
                         </group>
                     </group>

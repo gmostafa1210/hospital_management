@@ -8,7 +8,7 @@
             <tree>
                 <field name="name"/>
                 <field name="patient_code"/>
-                <field name="age"/>
+                <field name="age" attrs="{'invisible': [('age', '=', 0)]}"/>
                 <field name="gender"/>
             </tree>
         </field>

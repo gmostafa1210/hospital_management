@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="website_appointment_form" model="website.menu">
+        <field name="name">Appointment Form</field>
+        <field name="url">/appointment_form</field>
+        <field name="parent_id" ref="website.main_menu"/>
+        <field name="sequence">1</field>
+    </record>
+
+    <template id="take_appointment_form" name="Take Appointment">
+        <t t-call="website.layout">
+            <div id="wrap">
+                <div class="oe_structure">
+                    <div class="container">
+                        <form role="form" action="/create/patient" method="POST">
+                            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                            <br/>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6">
+                                        <label for="first_name" class="control-label">First Name</label>
+                                        <input type="text" name="first_name" t-att-value="first_name" id="first_name"
+                                            class="form-control" placeholder="Enter First Name (Required)" required="required"/>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6">
+                                        <label for="last_name" class="control-label">Last Name</label>
+                                        <input type="text" name="last_name" t-att-value="last_name" id="last_name"
+                                            class="form-control" placeholder="Enter Last Name"/>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6">
+                                        <label for="phone" class="control-label">Phone</label>
+                                        <input type="tel" name="phone" t-att-value="phone" id="phone"
+                                            class="form-control" placeholder="01 123456789 (Required)" pattern="01[0-9]{9}" required="required"/>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6"/>
+                                </div>
+                            </div>
+                            <div class="clearfix oe_login_buttons">
+                                <button type="submit" class="btn btn-primary pull-left">Create Patient</button>
+                            </div>
+                            <br/>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="patient_appointment" name="Take Appointment">
+        <t t-call="website.layout">
+            <div id="wrap">
+                <div class="oe_structure">
+                    <div class="container">
+                        <form role="form" action="/create/appointment" method="POST">
+                            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                            <h2>
+                                Your Patient Code is <strong><t t-esc='new_patient_rec.patient_code' t-att-value='new_patient_rec.id'/></strong>.
+                            </h2>
+                            <div class="row">
+                                <div class="col-lg-8">
+                                    <div class="alert alert-success" role="status">
+                                        Please keep you Patient Code safe. It will be used to identify your appointment.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group d-none">
+                                <label for="patient_id" class="control-label">patient</label>
+                                <select name="patient_id" class="form-control link-style" >
+                                    <option t-esc='new_patient_rec.name' t-att-value='new_patient_rec.id'/>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6">
+                                        <label for="hospital_id" class="control-label">Hospital</label>
+                                        <select name="hospital_id" class="form-control link-style" required="required">
+                                            <t t-foreach='hospital_rec' t-as="hospital">
+                                                <option t-esc='hospital.name' t-att-value='hospital.id'/>
+                                            </t>
+                                        </select>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6">
+                                        <label for="department_id" class="control-label">Department</label>
+                                        <select name="department_id" class="form-control link-style" required="required">
+                                            <t t-foreach='department_rec' t-as="department">
+                                                <option t-esc='department.name' t-att-value='department.id'/>
+                                            </t>
+                                        </select>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6">
+                                        <label for="doctor_id" class="control-label">Doctor</label>
+                                        <select name="doctor_id" class="form-control link-style" required="required">
+                                            <t t-foreach='doctor_rec' t-as="doctor">
+                                                <option t-esc='doctor.name' t-att-value='doctor.id'/>
+                                            </t>
+                                        </select>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6">
+                                        <label for="date" class="control-label">Appointment Date</label>
+                                        <input id="date" type="date" name="date" class="form-control o_website_form_input o_website_form_date" required="required"/>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6"/>
+                                </div>
+                            </div>
+                            <div class="clearfix oe_login_buttons">
+                                <button type="submit" class="btn btn-primary pull-left">Create Appointment</button>
+                            </div>
+                            <br/>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <record id="patient_thanks" model="website.page">
+        <field name="name">Thanks</field>
+        <field name="type">qweb</field>
+        <field name="url">/appointment_done</field>
+        <field name="website_published">True</field>
+        <field name="key">hospital_management.patient_thanks</field>
+        <field name="arch" type="xml">
+            <t name="Thanks" t-name="hospital_management.patient_thanks">
+                <t t-call="website.layout">
+                  <div id="wrap">
+                    <div class="container">
+                        <h1>Thanks!</h1>
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <div class="alert alert-success" role="status">
+                                    Your appointment has been Created successfully.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </t>
+            </t>
+        </field>
+    </record>
+
+</odoo>

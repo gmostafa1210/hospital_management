@@ -13,6 +13,7 @@ class HospitalDoctor(models.Model):
     _sql_constraints = [
         ('phone_unique', 'unique(phone)', 'Phone number already exists!'),
         ('email_unique', 'unique(email)', 'Email already exists!'),
+        ('nid_unique', 'unique(nid)', 'NID already exists!'),
     ]
 
     first_name = fields.Char(string='First Name', required=True)
@@ -22,30 +23,17 @@ class HospitalDoctor(models.Model):
             copy=False, readonly=True, index=True, default=lambda self: _('New'))
     email = fields.Char(string='Email', required=True)
     phone = fields.Char(string='Phone', required=True)
+    nid = fields.Char(string='NID Number')
     dob = fields.Date(string='DOB')
     age = fields.Integer(string='Age', compute='_get_age')
     gender = fields.Selection([('male', 'Male'), 
             ('female', 'Female')], string='Gender', default='male')
     history_ids = fields.One2many(
-            'hospital.patient.history', 'doctor_id', string='Patient History')
-    department = fields.Selection([('allergists_immunologists', 'Allergists/Immunologists'),
-            ('anesthesiologists', 'Anesthesiologists'),
-            ('cardiologists', 'Cardiologists'),
-            ('gastroenterologists', 'Gastroenterologists'),
-            ('neurologists', 'Neurologists'),
-            ('psychiatrists', 'Psychiatrists'),
-            ('dermatologists', 'Dermatologists'),
-            ('family_physicians', 'Family Physicians'),
-            ('pediatricians', 'Pediatricians'),
-            ('urologist', 'Urologist'),
-            ('eye_specialist', ' Eye Specialist'),
-            ('ent', 'ENT'),
-            ('dental', 'Dental')], string='Department', default='allergists_immunologists', required=True)
+            'hospital.patient.history', 'doctor_id', string='Patient History', required=True)   
     img = fields.Binary(string='Profile Image', attachment=True)
     address = fields.Text(string='Address')
-
-    hospital_id = fields.Many2one(
-        'hospital.hospital', string='Assigned Hospital')
+    hospital_id = fields.Many2one('hospital.hospital', string='Assigned Hospital', required=True)
+    department_id = fields.Many2one('hospital.department', string='Department', required=True) 
 
     def full_name(self):
         """
@@ -102,16 +90,56 @@ class HospitalDoctor(models.Model):
             values['doctor_code'] = self.env['ir.sequence'].next_by_code('hospital.doctor.sequence') or _('New')
         return super(HospitalDoctor, self).create(values)
 
-    def button_redrict_patient_history(self):
+    def button_redrict_patient_list(self):
         """
-        This function will redrict patient history.
+        This function will redrict patient list.
         """
         self.ensure_one()
         return {
-            'name': _('Patient History'),
+            'name': _('Patient List'),
             'view_mode': 'tree,form',
             'res_model': 'hospital.patient.history',
             'type': 'ir.actions.act_window',
-            'domain': [('doctor_id', '=', self.id)],
+            'domain': [('doctor_id', '=', self.id), ('state','=','pending')],
         }
 
+    @api.model
+    def _name_search(self, name, args=None, operator='ilike', limit=100, name_get_uid=None):
+        """
+        This function will search the doctor by name, code and phone number.
+        """
+        args = args or []
+        domain = []
+        if name:
+            domain = ['|', '|', '|', ('first_name', operator, name), ('last_name', operator, name), ('phone', operator, name), ('doctor_code', operator, name)] 
+        return self._search(domain + args, limit=limit, access_rights_uid=name_get_uid)
+
+    def name_get(self):
+        """
+        This function will return the full name of the doctor with doctor code.
+        """
+        result = []
+        for rec in self:
+            result.append((rec.id, '%s - %s' % (rec.doctor_code, rec.full_name())))
+        return result
+
+    @api.onchange('hospital_id')
+    def onchange_hospital_id(self):
+        """
+        This function will remove the department from the 
+        department field when the hospital is changed.
+        """
+        self.department_id = False
+
+    @api.onchange('hospital_id', 'department_id')
+    def domain_set(self):
+        """
+        This function will set the domain of the department.
+        """
+        dept_list = []
+        if self.hospital_id:
+            hospital_obj = self.env['hospital.hospital'].search([('id', '=', self.hospital_id.id)])
+            if hospital_obj:
+                for dept in hospital_obj.department_ids:
+                    dept_list.append(dept.id)
+            return {'domain': {'department_id': [('id', 'in', dept_list)]}}
