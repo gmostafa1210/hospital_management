@@ -12,6 +12,7 @@
         'security/ir.model.access.csv',
 
         'data/sequence.xml',
+        'data/department_demo.xml',
 
         'views/hospital_menus.xml',
         'views/res_users_view.xml',
@@ -19,6 +20,9 @@
         'views/hospital_view.xml',
         'views/patient_view.xml',
         'views/patient_history_view.xml',
+        'views/madicine_view.xml',
+        'views/department_view.xml',
+        'views/test_view.xml',
 
         'report/patient_prescription_report_view.xml',
 

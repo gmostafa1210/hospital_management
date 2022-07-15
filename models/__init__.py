@@ -7,3 +7,4 @@ from . import patient
 from . import patient_history
 from . import madicine
 from . import test
+from . import department

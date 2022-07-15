@@ -32,6 +32,7 @@
                             <field name="patient_capacity"/>
                         </group>
                         <group>
+                            <field name="department_ids"/>
                             <field name="website"/>
                             <field name="address"/>
                         </group>

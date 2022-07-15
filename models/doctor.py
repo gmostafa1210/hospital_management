@@ -29,25 +29,11 @@ class HospitalDoctor(models.Model):
     gender = fields.Selection([('male', 'Male'), 
             ('female', 'Female')], string='Gender', default='male')
     history_ids = fields.One2many(
-            'hospital.patient.history', 'doctor_id', string='Patient History')
-    department = fields.Selection([('allergists_immunologists', 'Allergists/Immunologists'),
-            ('anesthesiologists', 'Anesthesiologists'),
-            ('cardiologists', 'Cardiologists'),
-            ('gastroenterologists', 'Gastroenterologists'),
-            ('neurologists', 'Neurologists'),
-            ('psychiatrists', 'Psychiatrists'),
-            ('dermatologists', 'Dermatologists'),
-            ('family_physicians', 'Family Physicians'),
-            ('pediatricians', 'Pediatricians'),
-            ('urologist', 'Urologist'),
-            ('eye_specialist', ' Eye Specialist'),
-            ('ent', 'ENT'),
-            ('dental', 'Dental')], string='Department', default='allergists_immunologists', required=True)
+            'hospital.patient.history', 'doctor_id', string='Patient History', required=True)   
     img = fields.Binary(string='Profile Image', attachment=True)
     address = fields.Text(string='Address')
-
-    hospital_id = fields.Many2one(
-        'hospital.hospital', string='Assigned Hospital')
+    hospital_id = fields.Many2one('hospital.hospital', string='Assigned Hospital', required=True)
+    department_id = fields.Many2one('hospital.department', string='Department', required=True) 
 
     def full_name(self):
         """

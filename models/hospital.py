@@ -14,8 +14,8 @@ class HospitalHospital(models.Model):
     available_doctor = fields.Integer(string='Available Doctor')
     website = fields.Char(string='Website')
     address = fields.Text(string='Address')
-    doctor_ids = fields.One2many(
-        'hospital.doctor', 'hospital_id', string='Doctor List')
+    doctor_ids = fields.One2many('hospital.doctor', 'hospital_id', string='Doctor List')
+    department_ids = fields.Many2many('hospital.department', string='Department List')
 
     @api.model
     def create(self, values):
