@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="department_ent" model="hospital.department">
+            <field name="name">ENT</field>
+        </record>
+
+        <record id="department_cardiologists" model="hospital.department">
+            <field name="name">Cardiologists</field>
+        </record>
+
+        <record id="department_gastroenterologists" model="hospital.department">
+            <field name="name">Gastroenterologists</field>
+        </record>
+
+        <record id="department_anesthesiologists" model="hospital.department">
+            <field name="name">Anesthesiologists</field>
+        </record>
+
+        <record id="department_eye_specialist" model="hospital.department">
+            <field name="name">Eye Specialist</field>
+        </record>
+
+        <record id="department_neurologists" model="hospital.department">
+            <field name="name">Neurologists</field>
+        </record>
+
+        <record id="department_psychiatrists" model="hospital.department">
+            <field name="name">Psychiatrists</field>
+        </record>
+
+        <record id="department_dermatologists" model="hospital.department">
+            <field name="name">Dermatologists</field>
+        </record>
+
+        <record id="department_family_physicians" model="hospital.department">
+            <field name="name">Family Physicians</field>
+        </record>
+
+        <record id="department_pediatricians" model="hospital.department">
+            <field name="name">Pediatricians</field>
+        </record>
+
+        <record id="department_urologist" model="hospital.department">
+            <field name="name">Urologist</field>
+        </record>
+
+        <record id="department_dental" model="hospital.department">
+            <field name="name">Dental</field>
+        </record>
+
+        <record id="department_allergists_immunologists" model="hospital.department">
+            <field name="name">Allergists/Immunologists</field>
+        </record>
+
+    </data>
+</odoo>

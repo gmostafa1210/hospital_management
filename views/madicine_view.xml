@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_hospital_madicine_tree" model="ir.ui.view">
+        <field name="name">hospital.madicine.tree</field>
+        <field name="model">hospital.madicine</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="name"/>
+                <field name="mg_ml"/>
+            </tree>
+        </field>
+    </record>
+
+</odoo>

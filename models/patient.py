@@ -13,6 +13,7 @@ class HospitalPatient(models.Model):
     _sql_constraints = [
         ('phone_unique', 'unique(phone)', 'Phone number already exists!'),
         ('email_unique', 'unique(email)', 'Email already exists!'),
+        ('nid_unique', 'unique(nid)', 'NID already exists!'),
     ]
 
     first_name = fields.Char(string='First Name', required=True)
@@ -99,3 +100,23 @@ class HospitalPatient(models.Model):
             'type': 'ir.actions.act_window',
             'domain': [('patient_id', '=', self.id)],
         }
+
+    @api.model
+    def _name_search(self, name, args=None, operator='ilike', limit=100, name_get_uid=None):
+        """
+        This function will search the patient by name, code and phone number.
+        """
+        args = args or []
+        domain = []
+        if name:
+            domain = ['|', '|', '|', ('first_name', operator, name), ('last_name', operator, name), ('phone', operator, name), ('patient_code', operator, name)] 
+        return self._search(domain + args, limit=limit, access_rights_uid=name_get_uid)
+
+    def name_get(self):
+        """
+        This function will return the full name of the patient with patient code.
+        """
+        result = []
+        for rec in self:
+            result.append((rec.id, '%s - %s' % (rec.patient_code,rec.full_name())))
+        return result

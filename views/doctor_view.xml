@@ -8,7 +8,6 @@
             <tree>
                 <field name="name"/>
                 <field name="doctor_code"/>
-                <field name="age"/>
                 <field name="gender"/>
             </tree>
         </field>
@@ -20,7 +19,7 @@
         <field name="arch" type="xml">
             <form>
                 <header>
-                    <button name="button_redrict_patient_history" string="Patient History" type="object" class="oe_highlight"/>
+                    <button name="button_redrict_patient_list" string="Patient List" type="object" class="oe_highlight"/>
                 </header>
                 <sheet>
                     <div class="oe_button_box" name="button_box"/>
@@ -37,10 +36,11 @@
                             <field name="dob"/>
                         </group>
                         <group>
-                            <field name="department"/>
-                            <field name="hospital_id"/>
+                            <field name="hospital_id" options="{'no_quick_create': True, 'no_create_edit' : True}"/>
+                            <field name="department_id" options="{'no_quick_create': True, 'no_create_edit' : True}" attrs="{'readonly': [('hospital_id', '=', False)]}"/>
                             <field name="email"/>
                             <field name="phone"/>
+                            <field name="nid"/>
                             <field name="address"/>
                         </group>
                     </group>
@@ -50,8 +50,12 @@
                                 <tree>
                                     <field name="patient_id"/>
                                     <field name="date"/>
+                                    <field name="state"/>
                                 </tree>
                                 <form>
+                                    <header>
+                                        <button name="button_redrict_patient_history" string="Patient History" type="object" class="oe_highlight"/>
+                                    </header>
                                     <group>
                                         <group>
                                             <field name="patient_id"/>
