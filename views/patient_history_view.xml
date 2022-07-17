@@ -14,6 +14,16 @@
         </field>
     </record>
 
+    <record id="view_hospital_history_search" model="ir.ui.view">
+        <field name="name">hospital.patient.history.search</field>
+        <field name="model">hospital.patient.history</field>
+        <field name="arch" type="xml">
+            <search>
+                <filter name="get_pending_patient" string="Pending" domain="[('state','=','pending')]"/>
+            </search>
+        </field>
+    </record>
+
     <record id="view_hospital_history_form" model="ir.ui.view">
         <field name="name">hospital.patient.history.form</field>
         <field name="model">hospital.patient.history</field>

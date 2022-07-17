@@ -90,7 +90,7 @@ class HospitalDoctor(models.Model):
             values['doctor_code'] = self.env['ir.sequence'].next_by_code('hospital.doctor.sequence') or _('New')
         return super(HospitalDoctor, self).create(values)
 
-    def button_redrict_patient_list(self):
+    def button_redirect_patient_list(self):
         """
         This function will redrict patient list.
         """
@@ -100,8 +100,26 @@ class HospitalDoctor(models.Model):
             'view_mode': 'tree,form',
             'res_model': 'hospital.patient.history',
             'type': 'ir.actions.act_window',
-            'domain': [('doctor_id', '=', self.id), ('state','=','pending')],
+            'domain': [('doctor_id', '=', self.id)],
+            'context': {'search_default_get_pending_patient': 1},
         }
+
+    def action_redirect_current_doctor(self):
+        """
+        This function will redrict to current doctor from view.
+        """
+        doctor_id = self.env['res.users'].search([('id', '=', self.env.context.get('uid'))]).doctor_id
+        if doctor_id:
+            return {
+                'name': _('Doctor'),
+                'view_mode': 'form',
+                'res_model': 'hospital.doctor',
+                'type': 'ir.actions.act_window',
+                'res_id': doctor_id.id,
+                'context': {'default_doctor_id': doctor_id.id},
+            }
+        else:
+            raise UserError(_('For doctor only.'))
 
     @api.model
     def _name_search(self, name, args=None, operator='ilike', limit=100, name_get_uid=None):

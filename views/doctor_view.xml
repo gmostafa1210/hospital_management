@@ -19,7 +19,7 @@
         <field name="arch" type="xml">
             <form>
                 <header>
-                    <button name="button_redrict_patient_list" string="Patient List" type="object" class="oe_highlight"/>
+                    <button name="button_redirect_patient_list" string="Patient List" type="object" class="oe_highlight"/>
                 </header>
                 <sheet>
                     <div class="oe_button_box" name="button_box"/>

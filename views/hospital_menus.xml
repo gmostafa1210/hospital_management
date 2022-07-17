@@ -18,7 +18,7 @@
         action='action_hospital_management_doctor'
         name='Doctor'
         parent='menu_hospital_management'
-        groups='hospital_management.hospital_management_user_access_doctor'
+        groups='hospital_management.hospital_management_user_access_admin'
         sequence='1'/>
 
     <record id="action_hospital_management_patient" model="ir.actions.act_window">
@@ -63,6 +63,23 @@
         groups='hospital_management.hospital_management_user_access_admin'
         sequence='4'/>
 
+    <record id="action_redirect_current_doctor" model="ir.actions.server">
+        <field name="name">Current Doctor</field>
+        <field name="model_id" ref="model_hospital_doctor"/>
+        <field name="state">code</field>
+        <field name="code">
+            action = model.action_redirect_current_doctor()
+        </field>
+    </record>
+
+    <menuitem 
+        id='menu_redirect_current_doctor'
+        action='action_redirect_current_doctor'
+        name='Current Doctor'
+        parent='menu_hospital_management'
+        groups='hospital_management.hospital_management_user_access_doctor'
+        sequence='5'/>
+
     <record id="action_hospital_management_madicine" model="ir.actions.act_window">
         <field name="name">Madicine</field>
         <field name="res_model">hospital.madicine</field>
@@ -75,7 +92,7 @@
         name='Madicine'
         parent='menu_hospital_management'
         groups='hospital_management.hospital_management_user_access_doctor'
-        sequence='5'/>
+        sequence='6'/>
 
     <record id="action_hospital_management_test" model="ir.actions.act_window">
         <field name="name">Test</field>
@@ -89,14 +106,14 @@
         name='Test'
         parent='menu_hospital_management'
         groups='hospital_management.hospital_management_user_access_doctor'
-        sequence='6'/>
+        sequence='7'/>
 
     <menuitem 
         action="base.action_res_users" 
         id="menu_action_res_users_hospital" 
         parent="menu_hospital_management" 
         groups="hospital_management.hospital_management_user_access_admin"
-        sequence="7"/>
+        sequence="8"/>
 
     <menuitem 
         name="Discuss"
