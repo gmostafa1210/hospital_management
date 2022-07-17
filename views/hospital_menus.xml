@@ -65,7 +65,7 @@
 
     <record id="action_redirect_current_doctor" model="ir.actions.server">
         <field name="name">Current Doctor</field>
-        <field name="model_id" ref="model_hospital_doctor"/>
+        <field name="model_id" ref="model_hospital_patient"/>
         <field name="state">code</field>
         <field name="code">
             action = model.action_redirect_current_doctor()
