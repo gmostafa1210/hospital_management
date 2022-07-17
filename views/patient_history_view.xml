@@ -36,6 +36,10 @@
                     <field name="state" widget="statusbar"/>
                 </header>
                 <sheet>
+                    <div class="oe_title">
+                        <h5>Appointment Code</h5>
+                        <h1><field name="appointment_code" default_focus="1"/></h1>
+                    </div>
                     <group>
                         <group>
                             <field name="patient_id"/>
