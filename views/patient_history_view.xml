@@ -6,6 +6,7 @@
         <field name="model">hospital.patient.history</field>
         <field name="arch" type="xml">
             <tree>
+                <field name="appointment_code"/>
                 <field name="patient_id"/>
                 <field name="doctor_id"/>
                 <field name="date"/>
