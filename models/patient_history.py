@@ -7,11 +7,13 @@ from datetime import date
 class HospitalPatientHistory(models.Model):
     _name = 'hospital.patient.history'
     _description = 'Patient History Master Description.'
-    _rec_name = 'patient_id'
+    _rec_name = 'appointment_code'
 
     date = fields.Date(string='Date', default=date.today())
     patient_id = fields.Many2one('hospital.patient', string='Patient Name')
     doctor_id = fields.Many2one('hospital.doctor', string='Doctor Name')
+    appointment_code = fields.Char(string='Appointment Code', required=True, 
+            copy=False, readonly=True, index=True, default=lambda self: _('New'))
     department_id = fields.Many2one('hospital.department', string='Department')
     hospital_id = fields.Many2one('hospital.hospital', string='Hospital Name', related='doctor_id.hospital_id')
     symptoms = fields.Text(string='Symptoms')  
@@ -38,6 +40,23 @@ class HospitalPatientHistory(models.Model):
             'type': 'ir.actions.act_window',
             'domain': [('patient_id', '=', self.patient_id.id)],
         }
+
+    @api.model
+    def create(self, values):
+        if values.get('appointment_code', _('New')) == _('New'):
+            values['appointment_code'] = self.env['ir.sequence'].next_by_code('hospital.patient.history.sequence') or _('New')
+        return super(HospitalPatientHistory, self).create(values)
+
+    @api.model
+    def _name_search(self, name, args=None, operator='ilike', limit=100, name_get_uid=None):
+        """
+        This function will search the appointment by appointment code and patient name.
+        """
+        args = args or []
+        domain = []
+        if name:
+            domain = ['|', ('patient_id', operator, name), ('appointment_code', operator, name)] 
+        return self._search(domain + args, limit=limit, access_rights_uid=name_get_uid)
 
 
 class HospitalHistoryTestLine(models.Model):

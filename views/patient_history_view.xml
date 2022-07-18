@@ -14,6 +14,16 @@
         </field>
     </record>
 
+    <record id="view_hospital_history_search" model="ir.ui.view">
+        <field name="name">hospital.patient.history.search</field>
+        <field name="model">hospital.patient.history</field>
+        <field name="arch" type="xml">
+            <search>
+                <filter name="get_pending_patient" string="Pending" domain="[('state','=','pending')]"/>
+            </search>
+        </field>
+    </record>
+
     <record id="view_hospital_history_form" model="ir.ui.view">
         <field name="name">hospital.patient.history.form</field>
         <field name="model">hospital.patient.history</field>
@@ -26,6 +36,10 @@
                     <field name="state" widget="statusbar"/>
                 </header>
                 <sheet>
+                    <div class="oe_title">
+                        <h5>Appointment Code</h5>
+                        <h1><field name="appointment_code" default_focus="1"/></h1>
+                    </div>
                     <group>
                         <group>
                             <field name="patient_id"/>

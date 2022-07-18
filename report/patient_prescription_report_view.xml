@@ -18,7 +18,7 @@
                 <div class='page'>
                     <t t-foreach='docs' t-as='doc'>
                         <div class='text-center'>
-                            <h1><b>Reference Number# </b><t t-esc='doc.patient_id.patient_code'/></h1>
+                            <h1><b>Appointment Code# </b><t t-esc='doc.appointment_code'/></h1>
                         </div>
                         <div style='margin-top:30px;'> 
                             <table class='offset-md-2 col-md-8 offset-md-2' >
@@ -26,7 +26,13 @@
                                     <td><b>Name: </b><t t-esc='doc.patient_id.name'/></td>
                                 </tr>
                                 <tr>
+                                    <td><b>Patient Code: </b><t t-esc='doc.patient_id.patient_code'/></td>
+                                </tr>
+                                <tr>
                                     <td><b>Doctor Name: </b><t t-esc='doc.doctor_id.name'/></td>
+                                </tr>
+                                <tr>
+                                    <td><b>Doctor Code: </b><t t-esc='doc.doctor_id.doctor_code'/></td>
                                 </tr>
                                 <tr>
                                     <td><b>Date: </b><t t-esc='doc.date'/></td>

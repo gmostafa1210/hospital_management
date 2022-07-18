@@ -26,4 +26,13 @@
             <field name="padding">4</field>
         </record>
     </data>
+
+    <data noupdate="1">
+        <record id="sequence_hospital_patient_history" model="ir.sequence">
+            <field name="name">Appointment Sequence</field>
+            <field name="code">hospital.patient.history.sequence</field>
+            <field name="prefix">APT</field>
+            <field name="padding">7</field>
+        </record>
+    </data>
 </odoo>

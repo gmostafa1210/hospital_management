@@ -24,6 +24,8 @@
         'views/department_view.xml',
         'views/test_view.xml',
 
+        'wizards/appointment_wizard_view.xml',
+
         'report/patient_prescription_report_view.xml',
 
         'views/website_appointment_form.xml',
