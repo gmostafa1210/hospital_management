@@ -29,3 +29,10 @@ class HospitalAppointment(http.Controller):
     def create_appointment(self, **kw):
         request.env['hospital.patient.history'].sudo().create(kw)
         return request.render("hospital_management.patient_thanks", {})
+
+    @http.route(['/change/hospital'], type='json', auth="public", website=True, csrf=False)
+    def hospital_change(self, hospital_id):
+        mydict = {}
+        department_ids = request.env['hospital.hospital'].sudo().search([('id', '=', hospital_id)]).department_ids
+        print('========================================', department_ids)
+        return department_ids
