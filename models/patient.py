@@ -21,9 +21,9 @@ class HospitalPatient(models.Model):
     name = fields.Char(string='Name', compute='_get_full_name')
     patient_code = fields.Char(string='Patient Code', required=True, 
             copy=False, readonly=True, index=True, default=lambda self: _('New'))
-    nid = fields.Char(string='NID Number')
-    email = fields.Char(string='Email')
-    phone = fields.Char(string='Phone', required=True)
+    nid = fields.Char(string='NID Number', copy=False)
+    email = fields.Char(string='Email', copy=False)
+    phone = fields.Char(string='Phone', required=True, copy=False)
     dob = fields.Date(string='DOB')
     age = fields.Integer(string='Age', compute='_get_age')
     gender = fields.Selection([('male', 'Male'), 
@@ -120,3 +120,21 @@ class HospitalPatient(models.Model):
         for rec in self:
             result.append((rec.id, '%s - %s' % (rec.patient_code,rec.full_name())))
         return result
+    
+    def action_redirect_current_doctor(self):
+        """
+        This function will redrict to current doctor from view.
+        """
+        doctor_id = self.env['res.users'].search([('id', '=', self.env.context.get('uid'))]).doctor_id
+        if doctor_id:
+            return {
+                'name': _('Doctor'),
+                'view_mode': 'form',
+                'res_model': 'hospital.doctor',
+                'type': 'ir.actions.act_window',
+                'res_id': doctor_id.id,
+                'context': {'default_doctor_id': doctor_id.id},
+            }
+        else:
+            raise UserError(_('For doctor only.'))
+            

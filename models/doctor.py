@@ -21,9 +21,9 @@ class HospitalDoctor(models.Model):
     name = fields.Char(string='Name', compute='_get_full_name')
     doctor_code = fields.Char(string='Doctor Code', required=True, 
             copy=False, readonly=True, index=True, default=lambda self: _('New'))
-    email = fields.Char(string='Email', required=True)
-    phone = fields.Char(string='Phone', required=True)
-    nid = fields.Char(string='NID Number')
+    email = fields.Char(string='Email', required=True, copy=False)
+    phone = fields.Char(string='Phone', required=True, copy=False)
+    nid = fields.Char(string='NID Number', copy=False)
     dob = fields.Date(string='DOB')
     age = fields.Integer(string='Age', compute='_get_age')
     gender = fields.Selection([('male', 'Male'), 
@@ -90,7 +90,7 @@ class HospitalDoctor(models.Model):
             values['doctor_code'] = self.env['ir.sequence'].next_by_code('hospital.doctor.sequence') or _('New')
         return super(HospitalDoctor, self).create(values)
 
-    def button_redrict_patient_list(self):
+    def button_redirect_patient_list(self):
         """
         This function will redrict patient list.
         """
@@ -100,7 +100,8 @@ class HospitalDoctor(models.Model):
             'view_mode': 'tree,form',
             'res_model': 'hospital.patient.history',
             'type': 'ir.actions.act_window',
-            'domain': [('doctor_id', '=', self.id), ('state','=','pending')],
+            'domain': [('doctor_id', '=', self.id)],
+            'context': {'search_default_get_pending_patient': 1},
         }
 
     @api.model
