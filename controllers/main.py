@@ -29,3 +29,18 @@ class HospitalAppointment(http.Controller):
     def create_appointment(self, **kw):
         request.env['hospital.patient.history'].sudo().create(kw)
         return request.render("hospital_management.patient_thanks", {})
+
+    @http.route(['/change/hospital'], type='json', auth="public", website=True, csrf=False)
+    def hospital_change(self, hospital_id):
+        department_list = request.env['hospital.hospital'].sudo().search([('id', '=', hospital_id)]).department_ids.ids
+        department_ids = request.env['hospital.department'].sudo().search_read([('id', 'in', department_list)])
+        return department_ids
+
+
+    @http.route(['/change/department'], type='json', auth="public", website=True, csrf=False)
+    def department_change(self, department_id,hospital_id):
+        doctor_ids = request.env['hospital.doctor'].sudo().search_read([('department_id', '=', department_id), ('hospital_id', '=', hospital_id)])
+        return doctor_ids
+
+
+
