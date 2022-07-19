@@ -98,9 +98,10 @@
                                     <div class="col-lg-6 col-md-6">
                                         <label for="department_id" class="control-label">Department</label>
                                         <select name="department_id" class="form-control link-style department_select" required="required">
-                                            <t t-foreach='department_rec' t-as="department">
+                                            <option value=''>Please Select Hospital First</option>
+                                            <!-- <t t-foreach='department_rec' t-as="department">
                                                 <option t-esc='department.name' t-att-value='department.id'/>
-                                            </t>
+                                            </t> -->
                                         </select>
                                     </div>
                                     <div class="col-lg-6 col-md-6"/>
@@ -111,9 +112,10 @@
                                     <div class="col-lg-6 col-md-6">
                                         <label for="doctor_id" class="control-label">Doctor</label>
                                         <select name="doctor_id" class="form-control link-style doctor_select" required="required">
-                                            <t t-foreach='doctor_rec' t-as="doctor">
+                                            <option value=''>Please Select Department First</option>
+                                            <!-- <t t-foreach='doctor_rec' t-as="doctor">
                                                 <option t-esc='doctor.name' t-att-value='doctor.id'/>
-                                            </t>
+                                            </t> -->
                                         </select>
                                     </div>
                                     <div class="col-lg-6 col-md-6"/>
