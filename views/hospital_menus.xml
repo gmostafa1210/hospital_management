@@ -80,6 +80,13 @@
         groups='hospital_management.hospital_management_user_access_doctor'
         sequence='5'/>
 
+    <record id="action_search_by_appointment_code" model="ir.actions.act_window">
+        <field name="name">Patient History</field>
+        <field name="res_model">hospital.appointment.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
     <record id="action_hospital_management_madicine" model="ir.actions.act_window">
         <field name="name">Madicine</field>
         <field name="res_model">hospital.madicine</field>

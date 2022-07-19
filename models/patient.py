@@ -21,9 +21,9 @@ class HospitalPatient(models.Model):
     name = fields.Char(string='Name', compute='_get_full_name')
     patient_code = fields.Char(string='Patient Code', required=True, 
             copy=False, readonly=True, index=True, default=lambda self: _('New'))
-    nid = fields.Char(string='NID Number')
-    email = fields.Char(string='Email')
-    phone = fields.Char(string='Phone', required=True)
+    nid = fields.Char(string='NID Number', copy=False)
+    email = fields.Char(string='Email', copy=False)
+    phone = fields.Char(string='Phone', required=True, copy=False)
     dob = fields.Date(string='DOB')
     age = fields.Integer(string='Age', compute='_get_age')
     gender = fields.Selection([('male', 'Male'), 
