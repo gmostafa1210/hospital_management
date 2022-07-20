@@ -11,7 +11,6 @@ odoo.define('hospital_management.hospitaljs', function (require) {
 
         hospitalChange: function () {
             var hos_id = $( ".hospital_select option:selected" ).val();
-            console.log('hospital',hos_id)
 
             this._rpc({
                 route: "/change/hospital",
@@ -19,13 +18,12 @@ odoo.define('hospital_management.hospitaljs', function (require) {
                     hospital_id: parseInt(hos_id),
                     },
             }).then(function (data) {
-                var deptHtml = "<option value=''>Please Select department</option>"
+                var deptHtml = "<option value=''>--Please Select Department--</option>"
                 data.map((ob=>{
                     deptHtml += "<option value='"+ob.id +"'> "+ob.name+" </option>"
                 }))
-                //$('.department_select').append(deptHtml)
                 $('.department_select').children().remove().end().append(deptHtml) ;
-                $('.doctor_select').children().remove().end().append("<option value=''>Please Select department first</option>") ;
+                $('.doctor_select').children().remove().end().append("<option value=''>--Please Select Department First--</option>") ;
             });
         },
 
@@ -39,16 +37,13 @@ odoo.define('hospital_management.hospitaljs', function (require) {
                     hospital_id: parseInt(hos_id),
                     },
             }).then(function (data) {
-                console.log('department',data)
-                var docHtml = "<option value=''>Please Select Doctor</option>"
+                var docHtml = "<option value=''>--Please Select Doctor--</option>"
                 data.map((ob=>{
                     docHtml += "<option value='"+ob.id +"'> "+ob.name+" </option>"
                 }))
                 $('.doctor_select').children().remove().end().append(docHtml) ;
             });
         },
-
-
     });
 });
     
