@@ -123,15 +123,28 @@
         sequence="8"/>
 
     <menuitem 
+        name="Hidden"
+        id="menu_hospital_management_hidden"
+        parent="menu_hospital_management" 
+        groups="make_invisible_hospital"
+        sequence="9"/>
+
+    <menuitem 
         name="Discuss"
         id="mail.menu_root_discuss"
-        groups="make_invisible_hospital"
+        parent="menu_hospital_management_hidden" 
         sequence="80"/>
 
     <menuitem 
         name="Website"
         id="website.menu_website_configuration"
-        groups="make_invisible_hospital"
+        parent="menu_hospital_management_hidden" 
+        sequence="80"/>
+
+    <menuitem 
+        name="Settings"
+        id="base.menu_administration"
+        parent="menu_hospital_management_hidden" 
         sequence="80"/>
     
 </odoo>

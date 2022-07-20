@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <template id="assets_frontend" name="hospital assets" inherit_id="web.assets_frontend">
+
+    <template id="hospital_assets_frontend" name="Hospital Assets" inherit_id="web.assets_frontend">
         <xpath expr="." position="inside">
             <script type="text/javascript" src="/hospital_management/static/js/hospital.js"></script>
         </xpath>
     </template>
+
 </odoo>
