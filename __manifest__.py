@@ -15,6 +15,7 @@
         'data/department_demo.xml',
 
         'views/assets.xml',
+        
         'views/hospital_menus.xml',
         'views/res_users_view.xml',
         'views/doctor_view.xml',

@@ -84,7 +84,7 @@
                                     <div class="col-lg-6 col-md-6">
                                         <label for="hospital_id" class="control-label">Hospital</label>
                                         <select name="hospital_id" class="form-control link-style hospital_select" required="required">
-                                        <option value=''>Please Select Hospital</option>
+                                        <option value=''>--Please Select Hospital--</option>
                                             <t t-foreach='hospital_rec' t-as="hospital">
                                                 <option t-esc='hospital.name' t-att-value='hospital.id'/>
                                             </t>
@@ -98,10 +98,7 @@
                                     <div class="col-lg-6 col-md-6">
                                         <label for="department_id" class="control-label">Department</label>
                                         <select name="department_id" class="form-control link-style department_select" required="required">
-                                            <option value=''>Please Select Hospital First</option>
-                                            <!-- <t t-foreach='department_rec' t-as="department">
-                                                <option t-esc='department.name' t-att-value='department.id'/>
-                                            </t> -->
+                                            <option value=''>--Please Select Hospital First--</option>
                                         </select>
                                     </div>
                                     <div class="col-lg-6 col-md-6"/>
@@ -112,10 +109,7 @@
                                     <div class="col-lg-6 col-md-6">
                                         <label for="doctor_id" class="control-label">Doctor</label>
                                         <select name="doctor_id" class="form-control link-style doctor_select" required="required">
-                                            <option value=''>Please Select Department First</option>
-                                            <!-- <t t-foreach='doctor_rec' t-as="doctor">
-                                                <option t-esc='doctor.name' t-att-value='doctor.id'/>
-                                            </t> -->
+                                            <option value=''>--Please Select Department First--</option>
                                         </select>
                                     </div>
                                     <div class="col-lg-6 col-md-6"/>
@@ -153,6 +147,9 @@
                   <div id="wrap">
                     <div class="container">
                         <h1>Thanks!</h1>
+                        <h3>
+                            Your Appointment Code is <strong><t t-esc='history_id.appointment_code' t-att-value='history_id.id'/></strong>.
+                        </h3>
                         <div class="row">
                             <div class="col-lg-8">
                                 <div class="alert alert-success" role="status">
