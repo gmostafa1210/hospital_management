@@ -37,7 +37,7 @@ odoo.define('hospital_management.hospitaljs', function (require) {
                     hospital_id: parseInt(hos_id),
                     },
             }).then(function (data) {
-                var docHtml = "<option value=''>--Please Select Doctor--</option>"
+                var docHtml = "<option value=''>--- Please Select Doctor ---</option>"
                 data.map((ob=>{
                     docHtml += "<option value='"+ob.id +"'> "+ob.name+" </option>"
                 }))
