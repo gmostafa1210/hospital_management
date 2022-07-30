@@ -1,73 +1,64 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <odoo>
 
-    <menuitem 
-        id='menu_hospital_management'
-        name='Hospital Management'
-        sequence='1'
-        web_icon='hospital_management,static/description/icon.jpg'/>
-
-    <record id="action_hospital_management_doctor" model="ir.actions.act_window">
-        <field name="name">Doctor</field>
-        <field name="res_model">hospital.doctor</field>
-        <field name="view_mode">tree,form</field>
-    </record>
-
-    <menuitem 
-        id='menu_hospital_management_doctor'
-        action='action_hospital_management_doctor'
-        name='Doctor'
-        parent='menu_hospital_management'
-        groups='hospital_management.hospital_management_user_access_admin'
-        sequence='1'/>
-
-    <record id="action_hospital_management_patient" model="ir.actions.act_window">
-        <field name="name">Patient</field>
-        <field name="res_model">hospital.patient</field>
-        <field name="view_mode">tree,form</field>
-    </record>
-
-    <menuitem 
-        id='menu_hospital_management_patient'
-        action='action_hospital_management_patient'
-        name='Patient'
-        parent='menu_hospital_management'
-        groups='hospital_management.hospital_management_user_access_admin'
-        sequence='2'/>
-
-    <record id="action_hospital_management_hospital" model="ir.actions.act_window">
-        <field name="name">Hospital</field>
-        <field name="res_model">hospital.hospital</field>
-        <field name="view_mode">tree,form</field>
+    <record id='action_hospital_management_hospital' model='ir.actions.act_window'>
+        <field name='name'>Hospital</field>
+        <field name='res_model'>hospital.hospital</field>
+        <field name='view_mode'>tree,form</field>
     </record>
 
     <menuitem 
         id='menu_hospital_management_hospital'
         action='action_hospital_management_hospital'
         name='Hospital'
-        parent='menu_hospital_management'
+        groups='hospital_management.hospital_management_user_access_admin'
+        sequence='1'/>
+
+    <record id='action_hospital_management_doctor' model='ir.actions.act_window'>
+        <field name='name'>Doctor</field>
+        <field name='res_model'>hospital.doctor</field>
+        <field name='view_mode'>tree,form</field>
+    </record>
+
+    <menuitem 
+        id='menu_hospital_management_doctor'
+        action='action_hospital_management_doctor'
+        name='Doctor'
+        groups='hospital_management.hospital_management_user_access_admin'
+        sequence='2'/>
+
+    <record id='action_hospital_management_patient' model='ir.actions.act_window'>
+        <field name='name'>Patient</field>
+        <field name='res_model'>hospital.patient</field>
+        <field name='view_mode'>tree,form</field>
+    </record>
+
+    <menuitem 
+        id='menu_hospital_management_patient'
+        action='action_hospital_management_patient'
+        name='Patient'
         groups='hospital_management.hospital_management_user_access_admin'
         sequence='3'/>
 
-    <record id="action_hospital_management_department" model="ir.actions.act_window">
-        <field name="name">Departments</field>
-        <field name="res_model">hospital.department</field>
-        <field name="view_mode">tree</field>
+    <record id='action_hospital_management_department' model='ir.actions.act_window'>
+        <field name='name'>Departments</field>
+        <field name='res_model'>hospital.department</field>
+        <field name='view_mode'>tree</field>
     </record>
 
     <menuitem 
         id='menu_hospital_management_department'
         action='action_hospital_management_department'
         name='Department'
-        parent='menu_hospital_management'
+        parent='menu_hospital_management_hospital'
         groups='hospital_management.hospital_management_user_access_admin'
-        sequence='4'/>
+        sequence='1'/>
 
-    <record id="action_redirect_current_doctor" model="ir.actions.server">
-        <field name="name">Current Doctor</field>
-        <field name="model_id" ref="model_hospital_patient"/>
-        <field name="state">code</field>
-        <field name="code">
+    <record id='action_redirect_current_doctor' model='ir.actions.server'>
+        <field name='name'>Current Doctor</field>
+        <field name='model_id' ref='model_hospital_patient'/>
+        <field name='state'>code</field>
+        <field name='code'>
             action = model.action_redirect_current_doctor()
         </field>
     </record>
@@ -76,75 +67,95 @@
         id='menu_redirect_current_doctor'
         action='action_redirect_current_doctor'
         name='Current Doctor'
-        parent='menu_hospital_management'
         groups='hospital_management.hospital_management_user_access_doctor'
-        sequence='5'/>
+        sequence='4'/>
 
-    <record id="action_search_by_appointment_code" model="ir.actions.act_window">
-        <field name="name">Patient History</field>
-        <field name="res_model">hospital.appointment.wizard</field>
-        <field name="view_mode">form</field>
-        <field name="target">new</field>
+    <record id='action_search_by_appointment_code' model='ir.actions.act_window'>
+        <field name='name'>Patient History</field>
+        <field name='res_model'>hospital.appointment.wizard</field>
+        <field name='view_mode'>form</field>
+        <field name='target'>new</field>
     </record>
 
-    <record id="action_hospital_management_madicine" model="ir.actions.act_window">
-        <field name="name">Madicine</field>
-        <field name="res_model">hospital.madicine</field>
-        <field name="view_mode">tree</field>
+    <record id='action_hospital_management_madicine' model='ir.actions.act_window'>
+        <field name='name'>Madicine</field>
+        <field name='res_model'>hospital.madicine</field>
+        <field name='view_mode'>tree</field>
     </record>
 
     <menuitem 
         id='menu_hospital_management_madicine'
         action='action_hospital_management_madicine'
         name='Madicine'
-        parent='menu_hospital_management'
+        parent='menu_hospital_management_doctor'
         groups='hospital_management.hospital_management_user_access_doctor'
-        sequence='6'/>
+        sequence='1'/>
 
-    <record id="action_hospital_management_test" model="ir.actions.act_window">
-        <field name="name">Test</field>
-        <field name="res_model">hospital.test</field>
-        <field name="view_mode">tree</field>
+    <menuitem 
+        id='menu_hospital_management_madicine_current_doctor'
+        action='action_hospital_management_madicine'
+        name='Madicine'
+        parent='menu_redirect_current_doctor'
+        groups='hospital_management.hospital_management_user_access_doctor'
+        sequence='1'/>
+
+    <record id='action_hospital_management_test' model='ir.actions.act_window'>
+        <field name='name'>Test</field>
+        <field name='res_model'>hospital.test</field>
+        <field name='view_mode'>tree</field>
     </record>
 
     <menuitem 
         id='menu_hospital_management_test'
         action='action_hospital_management_test'
         name='Test'
-        parent='menu_hospital_management'
+        parent='menu_hospital_management_doctor'
         groups='hospital_management.hospital_management_user_access_doctor'
+        sequence='2'/>
+
+    <menuitem 
+        id='menu_hospital_management_test_current_doctor'
+        action='action_hospital_management_test'
+        name='Test'
+        parent='menu_redirect_current_doctor'
+        groups='hospital_management.hospital_management_user_access_doctor'
+        sequence='2'/>
+
+    <menuitem 
+        action='base.action_res_users' 
+        id='menu_action_res_users_hospital'
+        parent='menu_hospital_management_hospital'
+        groups='hospital_management.hospital_management_user_access_admin'
+        sequence='2'/>
+
+    <menuitem 
+        name='Hidden'
+        id='menu_hospital_management_hidden'
+        groups='make_invisible_hospital'
         sequence='7'/>
 
     <menuitem 
-        action="base.action_res_users" 
-        id="menu_action_res_users_hospital" 
-        parent="menu_hospital_management" 
-        groups="hospital_management.hospital_management_user_access_admin"
-        sequence="8"/>
+        name='Discuss'
+        id='mail.menu_root_discuss'
+        parent='menu_hospital_management_hidden' 
+        sequence='80'/>
 
     <menuitem 
-        name="Hidden"
-        id="menu_hospital_management_hidden"
-        parent="menu_hospital_management" 
-        groups="make_invisible_hospital"
-        sequence="9"/>
+        name='Website'
+        id='website.menu_website_configuration'
+        parent='menu_hospital_management_hidden' 
+        sequence='80'/>
 
     <menuitem 
-        name="Discuss"
-        id="mail.menu_root_discuss"
-        parent="menu_hospital_management_hidden" 
-        sequence="80"/>
+        name='Settings'
+        id='base.menu_administration'
+        parent='menu_hospital_management_hidden' 
+        sequence='80'/>
 
     <menuitem 
-        name="Website"
-        id="website.menu_website_configuration"
-        parent="menu_hospital_management_hidden" 
-        sequence="80"/>
-
-    <menuitem 
-        name="Settings"
-        id="base.menu_administration"
-        parent="menu_hospital_management_hidden" 
-        sequence="80"/>
+        name='Apps'
+        id='base.menu_management'
+        parent='menu_hospital_management_hidden' 
+        sequence='80'/>
     
 </odoo>
