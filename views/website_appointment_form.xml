@@ -84,7 +84,7 @@
                                     <div class="col-lg-6 col-md-6">
                                         <label for="hospital_id" class="control-label">Hospital</label>
                                         <select name="hospital_id" class="form-control link-style hospital_select" required="required">
-                                        <option value=''>--Please Select Hospital--</option>
+                                        <option value=''>--- Please Select Hospital ---</option>
                                             <t t-foreach='hospital_rec' t-as="hospital">
                                                 <option t-esc='hospital.name' t-att-value='hospital.id'/>
                                             </t>
@@ -98,7 +98,7 @@
                                     <div class="col-lg-6 col-md-6">
                                         <label for="department_id" class="control-label">Department</label>
                                         <select name="department_id" class="form-control link-style department_select" required="required">
-                                            <option value=''>--Please Select Hospital First--</option>
+                                            <option value=''>--- Please Select Hospital First ---</option>
                                         </select>
                                     </div>
                                     <div class="col-lg-6 col-md-6"/>
@@ -109,7 +109,7 @@
                                     <div class="col-lg-6 col-md-6">
                                         <label for="doctor_id" class="control-label">Doctor</label>
                                         <select name="doctor_id" class="form-control link-style doctor_select" required="required">
-                                            <option value=''>--Please Select Department First--</option>
+                                            <option value=''>--- Please Select Department First ---</option>
                                         </select>
                                     </div>
                                     <div class="col-lg-6 col-md-6"/>

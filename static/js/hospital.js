@@ -18,12 +18,12 @@ odoo.define('hospital_management.hospitaljs', function (require) {
                     hospital_id: parseInt(hos_id),
                     },
             }).then(function (data) {
-                var deptHtml = "<option value=''>--Please Select Department--</option>"
+                var deptHtml = "<option value=''>--- Please Select Department ---</option>"
                 data.map((ob=>{
                     deptHtml += "<option value='"+ob.id +"'> "+ob.name+" </option>"
                 }))
                 $('.department_select').children().remove().end().append(deptHtml) ;
-                $('.doctor_select').children().remove().end().append("<option value=''>--Please Select Department First--</option>") ;
+                $('.doctor_select').children().remove().end().append("<option value=''>--- Please Select Department First ---</option>") ;
             });
         },
 
