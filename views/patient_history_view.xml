@@ -20,6 +20,7 @@
         <field name="model">hospital.patient.history</field>
         <field name="arch" type="xml">
             <search>
+                <field name="appointment_code"/>
                 <filter name="get_pending_patient" string="Pending" domain="[('state','=','pending')]"/>
             </search>
         </field>
