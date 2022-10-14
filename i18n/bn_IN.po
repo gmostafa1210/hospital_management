@@ -1,0 +1,759 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* hospital_management
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-10-14 01:20+0000\n"
+"PO-Revision-Date: 2022-10-14 01:20+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hospital_management
+#: model:ir.actions.report,print_report_name:hospital_management.hospital_prescription_report
+msgid "'Prescription - %s' % (object.patient_id.first_name)"
+msgstr "'প্রেসক্রিপশন - %s' (object.patient_id.first_name)"
+
+#. module: hospital_management
+#: model_terms:ir.ui.view,arch_db:hospital_management.patient_appointment
+msgid "--- Please Select Department First ---"
+msgstr "--- প্রথমে বিভাগ নির্বাচন করুন ---"
+
+#. module: hospital_management
+#: model_terms:ir.ui.view,arch_db:hospital_management.patient_appointment
+msgid "--- Please Select Hospital ---"
+msgstr "--- হাসপাতাল নির্বাচন করুন ---"
+
+#. module: hospital_management
+#: model_terms:ir.ui.view,arch_db:hospital_management.patient_appointment
+msgid "--- Please Select Hospital First ---"
+msgstr "--- প্রথমে হাসপাতাল নির্বাচন করুন ---"
+
+#. module: hospital_management
+#: model_terms:ir.ui.view,arch_db:hospital_management.take_appointment_form
+msgid "01 123456789 (Required)"
+msgstr "01 123456789 (প্রয়োজন)"
+
+#. module: hospital_management
+#: model_terms:ir.ui.view,arch_db:hospital_management.hospital_prescription_report_document
+msgid "<b>Appointment Code# </b>"
+msgstr "<b>অ্যাপয়েন্টমেন্ট কোড # </b>"
+
+#. module: hospital_management
+#: model_terms:ir.ui.view,arch_db:hospital_management.hospital_prescription_report_document
+msgid "<b>Date: </b>"
+msgstr "<b>তারিখ: </b>"
+
+#. module: hospital_management
+#: model_terms:ir.ui.view,arch_db:hospital_management.hospital_prescription_report_document
+msgid "<b>Doctor Code: </b>"
+msgstr "<b>ডাক্তার কোড: </b>"
+
+#. module: hospital_management
+#: model_terms:ir.ui.view,arch_db:hospital_management.hospital_prescription_report_document
+msgid "<b>Doctor Name: </b>"
+msgstr "<b>ডাক্তারের নাম: </b>"
+
+#. module: hospital_management
+#: model_terms:ir.ui.view,arch_db:hospital_management.hospital_prescription_report_document
+msgid "<b>Name: </b>"
+msgstr "<b>নাম: </b>"
+
+#. module: hospital_management
+#: model_terms:ir.ui.view,arch_db:hospital_management.hospital_prescription_report_document
+msgid "<b>Patient Code: </b>"
+msgstr "<b>রোগীর কোড: </b>"
+
+#. module: hospital_management
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_doctor__address
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_hospital__address
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_patient__address
+msgid "Address"
+msgstr "ঠিকানা"
+
+#. module: hospital_management
+#: model:res.groups,name:hospital_management.hospital_management_user_access_admin
+msgid "Administrator"
+msgstr "পরিচালক"
+
+#. module: hospital_management
+#: model:ir.model.fields.selection,name:hospital_management.selection__hospital_history_madicine_line__when_to_take__after
+msgid "After Meal"
+msgstr "খাবারের পরে"
+
+#. module: hospital_management
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_doctor__age
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_patient__age
+msgid "Age"
+msgstr "বয়স"
+
+#. module: hospital_management
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_appointment_wizard__appointment_id
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_patient_history__appointment_code
+#: model_terms:ir.ui.view,arch_db:hospital_management.view_hospital_history_form
+msgid "Appointment Code"
+msgstr "অ্যাপয়েন্টমেন্ট কোড"
+
+#. module: hospital_management
+#: model_terms:ir.ui.view,arch_db:hospital_management.patient_appointment
+msgid "Appointment Date"
+msgstr "অ্যাপয়েন্টমেন্ট তারিখ"
+
+#. module: hospital_management
+#: model:website.menu,name:hospital_management.website_appointment_form
+msgid "Appointment Form"
+msgstr "অ্যাপয়েন্টমেন্ট ফর্ম"
+
+#. module: hospital_management
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_doctor__hospital_id
+msgid "Assigned Hospital"
+msgstr "নির্বাচিত হাসপাতাল"
+
+#. module: hospital_management
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_hospital__department_ids
+msgid "Available Departments"
+msgstr "বিভাগ"
+
+#. module: hospital_management
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_hospital__available_doctor
+msgid "Available Doctor"
+msgstr "ডাক্তার"
+
+#. module: hospital_management
+#: model:ir.model.fields.selection,name:hospital_management.selection__hospital_history_madicine_line__when_to_take__before
+msgid "Before Meal"
+msgstr "খাবারের আগে"
+
+#. module: hospital_management
+#: model_terms:ir.ui.view,arch_db:hospital_management.patient_appointment
+msgid "Create Appointment"
+msgstr "অ্যাপয়েন্টমেন্ট তৈরি করুন"
+
+#. module: hospital_management
+#: model_terms:ir.ui.view,arch_db:hospital_management.take_appointment_form
+msgid "Create Patient"
+msgstr "রোগী সংযুক্ত করুন"
+
+#. module: hospital_management
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_appointment_wizard__create_uid
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_department__create_uid
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_doctor__create_uid
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_history_madicine_line__create_uid
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_history_test_line__create_uid
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_hospital__create_uid
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_madicine__create_uid
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_patient__create_uid
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_patient_history__create_uid
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_test__create_uid
+msgid "Created by"
+msgstr "দ্বারা তৈরি করা হয়েছে"
+
+#. module: hospital_management
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_appointment_wizard__create_date
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_department__create_date
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_doctor__create_date
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_history_madicine_line__create_date
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_history_test_line__create_date
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_hospital__create_date
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_madicine__create_date
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_patient__create_date
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_patient_history__create_date
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_test__create_date
+msgid "Created on"
+msgstr "তৈরি করা হয়েছে"
+
+#. module: hospital_management
+#: model:ir.actions.server,name:hospital_management.action_redirect_current_doctor
+#: model:ir.ui.menu,name:hospital_management.menu_redirect_current_doctor
+msgid "Current Doctor"
+msgstr "বর্তমান ডাক্তার"
+
+#. module: hospital_management
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_doctor__dob
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_patient__dob
+msgid "DOB"
+msgstr "জন্ম তারিখ"
+
+#. module: hospital_management
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_patient_history__date
+msgid "Date"
+msgstr "তারিখ"
+
+#. module: hospital_management
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_history_madicine_line__days
+#: model_terms:ir.ui.view,arch_db:hospital_management.hospital_prescription_report_document
+msgid "Days"
+msgstr "দিন"
+
+#. module: hospital_management
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_doctor__department_id
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_patient_history__department_id
+#: model:ir.ui.menu,name:hospital_management.menu_hospital_management_department
+#: model_terms:ir.ui.view,arch_db:hospital_management.patient_appointment
+msgid "Department"
+msgstr "বিভাগ"
+
+#. module: hospital_management
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_department__name
+msgid "Department Name"
+msgstr "বিভাগের নাম"
+
+#. module: hospital_management
+#: model:ir.actions.act_window,name:hospital_management.action_hospital_management_department
+msgid "Departments"
+msgstr "বিভাগ"
+
+#. module: hospital_management
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_appointment_wizard__display_name
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_department__display_name
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_doctor__display_name
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_history_madicine_line__display_name
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_history_test_line__display_name
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_hospital__display_name
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_madicine__display_name
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_patient__display_name
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_patient_history__display_name
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_test__display_name
+#: model:ir.model.fields,field_description:hospital_management.field_res_users__display_name
+msgid "Display Name"
+msgstr "প্রদর্শন নাম"
+
+#. module: hospital_management
+#: code:addons/hospital_management/models/patient.py:0
+#: model:ir.actions.act_window,name:hospital_management.action_hospital_management_doctor
+#: model:ir.model.fields,field_description:hospital_management.field_res_users__doctor_id
+#: model:ir.ui.menu,name:hospital_management.menu_hospital_management_doctor
+#: model:res.groups,name:hospital_management.hospital_management_user_access_doctor
+#: model_terms:ir.ui.view,arch_db:hospital_management.patient_appointment
+#, python-format
+msgid "Doctor"
+msgstr "ডাক্তার"
+
+#. module: hospital_management
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_doctor__doctor_code
+#: model_terms:ir.ui.view,arch_db:hospital_management.view_hospital_doctor_form
+#: model_terms:ir.ui.view,arch_db:hospital_management.view_hospital_hospital_form
+msgid "Doctor Code"
+msgstr "ডাক্তার কোড"
+
+#. module: hospital_management
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_hospital__doctor_ids
+#: model_terms:ir.ui.view,arch_db:hospital_management.view_hospital_hospital_form
+msgid "Doctor List"
+msgstr "ডাক্তার তালিকা"
+
+#. module: hospital_management
+#: model:ir.model,name:hospital_management.model_hospital_doctor
+msgid "Doctor Master Description."
+msgstr "ডাক্তার মাস্টার বিবরণ।"
+
+#. module: hospital_management
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_patient_history__doctor_id
+msgid "Doctor Name"
+msgstr "ডাক্তারের নাম"
+
+#. module: hospital_management
+#: model:ir.model.fields.selection,name:hospital_management.selection__hospital_patient_history__state__done
+#: model_terms:ir.ui.view,arch_db:hospital_management.view_hospital_history_form
+msgid "Done"
+msgstr "সম্পন্ন"
+
+#. module: hospital_management
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_doctor__email
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_patient__email
+msgid "Email"
+msgstr "ইমেইল"
+
+#. module: hospital_management
+#: model:ir.model.constraint,message:hospital_management.constraint_hospital_doctor_email_unique
+#: model:ir.model.constraint,message:hospital_management.constraint_hospital_patient_email_unique
+msgid "Email already exists!"
+msgstr "ইমেইল ইতিমধ্যে বিদ্যমান!"
+
+#. module: hospital_management
+#: model_terms:ir.ui.view,arch_db:hospital_management.take_appointment_form
+msgid "Enter First Name (Required)"
+msgstr "প্রথম নাম লিখুন (প্রয়োজন)"
+
+#. module: hospital_management
+#: model_terms:ir.ui.view,arch_db:hospital_management.take_appointment_form
+msgid "Enter Last Name"
+msgstr "শেষ নাম লিখুন"
+
+#. module: hospital_management
+#: model:ir.model.fields.selection,name:hospital_management.selection__hospital_doctor__gender__female
+#: model:ir.model.fields.selection,name:hospital_management.selection__hospital_patient__gender__female
+msgid "Female"
+msgstr "মহিলা"
+
+#. module: hospital_management
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_doctor__first_name
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_patient__first_name
+#: model_terms:ir.ui.view,arch_db:hospital_management.take_appointment_form
+msgid "First Name"
+msgstr "নামের প্রথম অংশ"
+
+#. module: hospital_management
+#: code:addons/hospital_management/models/patient.py:0
+#, python-format
+msgid "For doctor only."
+msgstr "শুধুমাত্র ডাক্তারের জন্য।"
+
+#. module: hospital_management
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_doctor__gender
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_patient__gender
+msgid "Gender"
+msgstr "লিঙ্গ"
+
+#. module: hospital_management
+#: model:ir.ui.menu,name:hospital_management.menu_hospital_management_hidden
+msgid "Hidden"
+msgstr "লুকানো"
+
+#. module: hospital_management
+#: model:ir.actions.act_window,name:hospital_management.action_hospital_management_hospital
+#: model:ir.ui.menu,name:hospital_management.menu_hospital_management_hospital
+#: model_terms:ir.ui.view,arch_db:hospital_management.patient_appointment
+msgid "Hospital"
+msgstr "হাসপাতাল"
+
+#. module: hospital_management
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_hospital__hospital_code
+#: model_terms:ir.ui.view,arch_db:hospital_management.view_hospital_hospital_form
+msgid "Hospital Code"
+msgstr "হাসপাতাল কোড"
+
+#. module: hospital_management
+#: model:ir.module.category,name:hospital_management.hospital_management_user_access
+msgid "Hospital Management"
+msgstr ""
+
+#. module: hospital_management
+#: model:ir.model,name:hospital_management.model_hospital_hospital
+msgid "Hospital Master Description."
+msgstr "হাসপাতাল বিবরণ।"
+
+#. module: hospital_management
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_hospital__name
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_patient_history__hospital_id
+msgid "Hospital Name"
+msgstr "হাসপাতালের নাম"
+
+#. module: hospital_management
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_appointment_wizard__id
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_department__id
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_doctor__id
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_history_madicine_line__id
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_history_test_line__id
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_hospital__id
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_madicine__id
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_patient__id
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_patient_history__id
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_test__id
+#: model:ir.model.fields,field_description:hospital_management.field_res_users__id
+msgid "ID"
+msgstr "আইডি "
+
+#. module: hospital_management
+#: code:addons/hospital_management/models/doctor.py:0
+#: code:addons/hospital_management/models/patient.py:0
+#, python-format
+msgid "Invalid DOB!"
+msgstr "অবৈধ জন্ম তারিখ!"
+
+#. module: hospital_management
+#: model:res.groups,name:hospital_management.make_invisible_hospital
+msgid "Invisible"
+msgstr "অদৃশ্য"
+
+#. module: hospital_management
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_appointment_wizard____last_update
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_department____last_update
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_doctor____last_update
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_history_madicine_line____last_update
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_history_test_line____last_update
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_hospital____last_update
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_madicine____last_update
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_patient____last_update
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_patient_history____last_update
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_test____last_update
+#: model:ir.model.fields,field_description:hospital_management.field_res_users____last_update
+msgid "Last Modified on"
+msgstr "সর্বশেষ সংশোধিত"
+
+#. module: hospital_management
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_doctor__last_name
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_patient__last_name
+#: model_terms:ir.ui.view,arch_db:hospital_management.take_appointment_form
+msgid "Last Name"
+msgstr "নামের শেষাংশ"
+
+#. module: hospital_management
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_appointment_wizard__write_uid
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_department__write_uid
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_doctor__write_uid
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_history_madicine_line__write_uid
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_history_test_line__write_uid
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_hospital__write_uid
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_madicine__write_uid
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_patient__write_uid
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_patient_history__write_uid
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_test__write_uid
+msgid "Last Updated by"
+msgstr "সর্বশেষ আপডেট করেছেন"
+
+#. module: hospital_management
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_appointment_wizard__write_date
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_department__write_date
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_doctor__write_date
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_history_madicine_line__write_date
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_history_test_line__write_date
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_hospital__write_date
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_madicine__write_date
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_patient__write_date
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_patient_history__write_date
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_test__write_date
+msgid "Last Updated on"
+msgstr "সর্বশেষ আপডেট"
+
+#. module: hospital_management
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_history_madicine_line__mg_ml
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_madicine__mg_ml
+#: model_terms:ir.ui.view,arch_db:hospital_management.hospital_prescription_report_document
+msgid "MG/ML"
+msgstr "মিলিগ্রাম/মিলিলিটার"
+
+#. module: hospital_management
+#: model:ir.actions.act_window,name:hospital_management.action_hospital_management_madicine
+#: model:ir.ui.menu,name:hospital_management.menu_hospital_management_madicine
+#: model:ir.ui.menu,name:hospital_management.menu_hospital_management_madicine_current_doctor
+#: model_terms:ir.ui.view,arch_db:hospital_management.hospital_prescription_report_document
+#: model_terms:ir.ui.view,arch_db:hospital_management.view_hospital_history_form
+msgid "Madicine"
+msgstr "ঔষধ"
+
+#. module: hospital_management
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_patient_history__madicine_line_ids
+msgid "Madicine Line"
+msgstr "ঔষধ লাইন"
+
+#. module: hospital_management
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_history_madicine_line__madicine_id
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_madicine__name
+msgid "Madicine Name"
+msgstr "ঔষধের নাম"
+
+#. module: hospital_management
+#: model:ir.model.fields.selection,name:hospital_management.selection__hospital_doctor__gender__male
+#: model:ir.model.fields.selection,name:hospital_management.selection__hospital_patient__gender__male
+msgid "Male"
+msgstr "পুরুষ"
+
+#. module: hospital_management
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_doctor__nid
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_patient__nid
+msgid "NID Number"
+msgstr "জাতীয় পরিচয়পত্র নম্বর"
+
+#. module: hospital_management
+#: model:ir.model.constraint,message:hospital_management.constraint_hospital_doctor_nid_unique
+#: model:ir.model.constraint,message:hospital_management.constraint_hospital_patient_nid_unique
+msgid "NID already exists!"
+msgstr "জাতীয় পরিচয়পত্র নম্বর ইতিমধ্যে বিদ্যমান!"
+
+#. module: hospital_management
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_doctor__name
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_patient__name
+msgid "Name"
+msgstr "নাম"
+
+#. module: hospital_management
+#: code:addons/hospital_management/models/doctor.py:0
+#: code:addons/hospital_management/models/doctor.py:0
+#: code:addons/hospital_management/models/doctor.py:0
+#: code:addons/hospital_management/models/doctor.py:0
+#: code:addons/hospital_management/models/hospital.py:0
+#: code:addons/hospital_management/models/hospital.py:0
+#: code:addons/hospital_management/models/hospital.py:0
+#: code:addons/hospital_management/models/hospital.py:0
+#: code:addons/hospital_management/models/patient.py:0
+#: code:addons/hospital_management/models/patient.py:0
+#: code:addons/hospital_management/models/patient.py:0
+#: code:addons/hospital_management/models/patient.py:0
+#: code:addons/hospital_management/models/patient_history.py:0
+#: code:addons/hospital_management/models/patient_history.py:0
+#: code:addons/hospital_management/models/patient_history.py:0
+#: code:addons/hospital_management/models/patient_history.py:0
+#, python-format
+msgid "New"
+msgstr "নতুন"
+
+#. module: hospital_management
+#: code:addons/hospital_management/models/patient.py:0
+#, python-format
+msgid "Not a valid NID number."
+msgstr "জাতীয় পরিচয়পত্র নম্বর সঠিক নয়।"
+
+#. module: hospital_management
+#: code:addons/hospital_management/models/doctor.py:0
+#: code:addons/hospital_management/models/patient.py:0
+#, python-format
+msgid "Not a valid email!"
+msgstr "ইমেইল ঠিকানা সঠিক নয়!"
+
+#. module: hospital_management
+#: code:addons/hospital_management/models/doctor.py:0
+#: code:addons/hospital_management/models/patient.py:0
+#, python-format
+msgid "Not a valid phone number."
+msgstr ""
+
+#. module: hospital_management
+#: model:ir.actions.act_window,name:hospital_management.action_hospital_management_patient
+#: model:ir.ui.menu,name:hospital_management.menu_hospital_management_patient
+msgid "Patient"
+msgstr "রোগী"
+
+#. module: hospital_management
+#: model:ir.model,name:hospital_management.model_hospital_appointment_wizard
+msgid "Patient Appointment Wizard Master Description."
+msgstr "রোগীর নিদর্শন ও সংক্রান্ত তথ্য সংরক্ষণ করার জন্য উপযুক্ত মাস্টার ডেসক্রিপশন।"
+
+#. module: hospital_management
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_hospital__patient_capacity
+msgid "Patient Capacity"
+msgstr "রোগীর সংখ্যা"
+
+#. module: hospital_management
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_patient__patient_code
+#: model_terms:ir.ui.view,arch_db:hospital_management.view_hospital_patient_form
+msgid "Patient Code"
+msgstr "রোগীর কোড"
+
+#. module: hospital_management
+#: model:ir.model,name:hospital_management.model_hospital_department
+msgid "Patient Department Master Description."
+msgstr "রোগীর বিভাগ সংরক্ষণ করার জন্য উপযুক্ত মাস্টার ডেসক্রিপশন।"
+
+#. module: hospital_management
+#: code:addons/hospital_management/models/patient.py:0
+#: code:addons/hospital_management/models/patient_history.py:0
+#: code:addons/hospital_management/wizards/appointment_wizard.py:0
+#: model:ir.actions.act_window,name:hospital_management.action_search_by_appointment_code
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_doctor__history_ids
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_history_madicine_line__patient_history_id
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_history_test_line__patient_history_id
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_patient__history_ids
+#: model_terms:ir.ui.view,arch_db:hospital_management.view_hospital_doctor_form
+#: model_terms:ir.ui.view,arch_db:hospital_management.view_hospital_history_form
+#: model_terms:ir.ui.view,arch_db:hospital_management.view_hospital_patient_form
+#, python-format
+msgid "Patient History"
+msgstr "রোগীর ইতিহাস"
+
+#. module: hospital_management
+#: model:ir.model,name:hospital_management.model_hospital_history_madicine_line
+msgid "Patient History Madicine Line Master Description."
+msgstr "রোগীর ইতিহাস ও সংক্রান্ত তথ্য সংরক্ষণ করার জন্য উপযুক্ত মাস্টার ডেসক্রিপশন।"
+
+#. module: hospital_management
+#: model:ir.model,name:hospital_management.model_hospital_patient_history
+msgid "Patient History Master Description."
+msgstr "রোগীর ইতিহাস ও সংক্রান্ত তথ্য সংরক্ষণ করার জন্য উপযুক্ত মাস্টার ডেসক্রিপশন।"
+
+#. module: hospital_management
+#: model:ir.model,name:hospital_management.model_hospital_history_test_line
+msgid "Patient History Test Line Master Description."
+msgstr "রোগীর ইতিহাস ও সংক্রান্ত তথ্য সংরক্ষণ করার জন্য উপযুক্ত মাস্টার ডেসক্রিপশন।"
+
+#. module: hospital_management
+#: code:addons/hospital_management/models/doctor.py:0
+#: model_terms:ir.ui.view,arch_db:hospital_management.view_hospital_doctor_form
+#, python-format
+msgid "Patient List"
+msgstr "রোগীর তালিকা"
+
+#. module: hospital_management
+#: model:ir.model,name:hospital_management.model_hospital_madicine
+msgid "Patient Madicine Master Description."
+msgstr "রোগীর ও সংক্রান্ত তথ্য সংরক্ষণ করার জন্য উপযুক্ত মাস্টার ডেসক্রিপশন।"
+
+#. module: hospital_management
+#: model:ir.model,name:hospital_management.model_hospital_patient
+msgid "Patient Master Description."
+msgstr "রোগীর ও সংক্রান্ত তথ্য সংরক্ষণ করার জন্য উপযুক্ত মাস্টার ডেসক্রিপশন।"
+
+#. module: hospital_management
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_patient_history__patient_id
+msgid "Patient Name"
+msgstr "রোগীর নাম"
+
+#. module: hospital_management
+#: model:ir.model,name:hospital_management.model_hospital_test
+msgid "Patient Test Master Description."
+msgstr "রোগীর ও সংক্রান্ত তথ্য সংরক্ষণ করার জন্য উপযুক্ত মাস্টার ডেসক্রিপশন।"
+
+#. module: hospital_management
+#: model:ir.model.fields.selection,name:hospital_management.selection__hospital_patient_history__state__pending
+#: model_terms:ir.ui.view,arch_db:hospital_management.view_hospital_history_search
+msgid "Pending"
+msgstr "পেন্ডিং"
+
+#. module: hospital_management
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_doctor__phone
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_patient__phone
+#: model_terms:ir.ui.view,arch_db:hospital_management.take_appointment_form
+msgid "Phone"
+msgstr "ফোন"
+
+#. module: hospital_management
+#: model:ir.model.constraint,message:hospital_management.constraint_hospital_doctor_phone_unique
+#: model:ir.model.constraint,message:hospital_management.constraint_hospital_patient_phone_unique
+msgid "Phone number already exists!"
+msgstr "ফোন নম্বর ইতিমধ্যে বিদ্যমান!"
+
+#. module: hospital_management
+#: model_terms:ir.ui.view,arch_db:hospital_management.view_hospital_appointment_wizard_form
+msgid "Please enter appointment code."
+msgstr "অ্যাপয়েন্টমেন্ট কোড লিখুন।"
+
+#. module: hospital_management
+#: model_terms:ir.ui.view,arch_db:hospital_management.patient_appointment
+msgid ""
+"Please keep you Patient Code safe. It will be used to identify your "
+"appointment."
+msgstr ""
+"আপনার রোগীর কোড সুরক্ষিত রাখুন। এটি আপনার অ্যাপয়েন্টমেন্ট সনাক্ত করতে ব্যবহৃত "
+"হবে।"
+
+#. module: hospital_management
+#: model:ir.actions.report,name:hospital_management.hospital_prescription_report
+msgid "Prescription PDF"
+msgstr "প্রেসক্রিপশন পিডিএফ"
+
+#. module: hospital_management
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_doctor__img
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_patient__img
+msgid "Profile Image"
+msgstr "প্রোফাইল ছবি"
+
+#. module: hospital_management
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_history_madicine_line__quantity
+#: model_terms:ir.ui.view,arch_db:hospital_management.hospital_prescription_report_document
+msgid "Quantity"
+msgstr "পরিমাণ"
+
+#. module: hospital_management
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_history_test_line__result
+msgid "Remarks"
+msgstr "মন্তব্য"
+
+#. module: hospital_management
+#: model_terms:ir.ui.view,arch_db:hospital_management.view_hospital_history_form
+msgid "Reset to Pending"
+msgstr "পেন্ডিং এ রিসেট করুন"
+
+#. module: hospital_management
+#: model_terms:ir.ui.view,arch_db:hospital_management.hospital_prescription_report_document
+msgid "SL."
+msgstr "সিরিয়াল"
+
+#. module: hospital_management
+#: model_terms:ir.ui.view,arch_db:hospital_management.view_hospital_doctor_form
+msgid "Search by Appointment Code"
+msgstr "অ্যাপয়েন্টমেন্ট কোড দ্বারা অনুসন্ধান করুন"
+
+#. module: hospital_management
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_patient_history__state
+msgid "State"
+msgstr "রাষ্ট্র"
+
+#. module: hospital_management
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_patient_history__symptoms
+msgid "Symptoms"
+msgstr "লক্ষণ"
+
+#. module: hospital_management
+#: model:ir.actions.act_window,name:hospital_management.action_hospital_management_test
+#: model:ir.ui.menu,name:hospital_management.menu_hospital_management_test
+#: model:ir.ui.menu,name:hospital_management.menu_hospital_management_test_current_doctor
+#: model_terms:ir.ui.view,arch_db:hospital_management.view_hospital_history_form
+msgid "Test"
+msgstr "পরীক্ষা"
+
+#. module: hospital_management
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_history_test_line__test_copy
+msgid "Test Copy"
+msgstr "পরীক্ষা কপি"
+
+#. module: hospital_management
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_history_test_line__date
+msgid "Test Date"
+msgstr "পরীক্ষার তারিখ"
+
+#. module: hospital_management
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_patient_history__test_line_ids
+msgid "Test Line"
+msgstr "পরীক্ষা লাইন"
+
+#. module: hospital_management
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_history_test_line__test_id
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_test__name
+msgid "Test Name"
+msgstr "পরীক্ষার নাম"
+
+#. module: hospital_management
+#: model_terms:ir.ui.view,arch_db:hospital_management.patient_thanks_ir_ui_view
+#: model_terms:website.page,arch_db:hospital_management.patient_thanks
+msgid "Thanks!"
+msgstr "ধন্যবাদ!"
+
+#. module: hospital_management
+#: model:ir.model,name:hospital_management.model_res_users
+#: model:ir.ui.menu,name:hospital_management.menu_action_res_users_hospital
+msgid "Users"
+msgstr "ব্যবহারকারীরা"
+
+#. module: hospital_management
+#: model_terms:ir.ui.view,arch_db:hospital_management.view_hospital_appointment_wizard_form
+msgid "View Patient History"
+msgstr "প্রতিবেদন দেখুন"
+
+#. module: hospital_management
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_hospital__website
+msgid "Website"
+msgstr "ওয়েবসাইট"
+
+#. module: hospital_management
+#: model:ir.model.fields,field_description:hospital_management.field_hospital_history_madicine_line__when_to_take
+#: model_terms:ir.ui.view,arch_db:hospital_management.hospital_prescription_report_document
+msgid "When to Take"
+msgstr "কখন নিতে হবে"
+
+#. module: hospital_management
+#: model_terms:ir.ui.view,arch_db:hospital_management.patient_thanks_ir_ui_view
+#: model_terms:website.page,arch_db:hospital_management.patient_thanks
+msgid "Your Appointment Code is"
+msgstr "আপনার অ্যাপয়েন্টমেন্ট কোড হল"
+
+#. module: hospital_management
+#: model_terms:ir.ui.view,arch_db:hospital_management.patient_appointment
+msgid "Your Patient Code is"
+msgstr "আপনার রোগী কোড হল"
+
+#. module: hospital_management
+#: model_terms:ir.ui.view,arch_db:hospital_management.patient_thanks_ir_ui_view
+#: model_terms:website.page,arch_db:hospital_management.patient_thanks
+msgid "Your appointment has been Created successfully."
+msgstr "আপনার অ্যাপয়েন্টমেন্ট সফলভাবে তৈরি হয়েছে।"
+
+#. module: hospital_management
+#: model_terms:ir.ui.view,arch_db:hospital_management.patient_appointment
+msgid "patient"
+msgstr "রোগী"
