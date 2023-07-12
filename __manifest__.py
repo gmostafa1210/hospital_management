@@ -12,7 +12,6 @@
         'security/ir.model.access.csv',
 
         'data/sequence.xml',
-        'data/department_demo.xml',
 
         'views/assets.xml',
         
@@ -31,6 +30,9 @@
         'report/patient_prescription_report_view.xml',
 
         'views/website_appointment_form.xml',
+    ],
+    'demo': [
+        'data/department_demo.xml',
     ],
     'installable': True,
     'application': True,
